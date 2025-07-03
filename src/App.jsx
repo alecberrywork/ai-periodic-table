@@ -8,8 +8,31 @@ const tools = [
   { symbol: "Ch", name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI.", link: "https://chat.openai.com" },
   { symbol: "Cl", name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog.", link: "https://claude.ai" },
   { symbol: "Go", name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite.", link: "https://deepmind.google/technologies/gemini" },
+  { symbol: "Ph", name: "Phind", category: "LLM", description: "AI search engine and coding assistant for developers.", link: "https://www.phind.com" },
   { symbol: "Mi", name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord.", link: "https://midjourney.com" },
-  // Add remaining tool links here as needed...
+  { symbol: "Df", name: "DALL·E", category: "IMG", description: "OpenAI's tool for generating images from text prompts.", link: "https://openai.com/dall-e" },
+  { symbol: "Sd", name: "Stable Diffusion", category: "IMG", description: "Popular open-source text-to-image generation model.", link: "https://stability.ai" },
+  { symbol: "So", name: "Sora", category: "VID", description: "OpenAI's text-to-video model for cinematic video output.", link: "https://openai.com/sora" },
+  { symbol: "Ru", name: "Runway", category: "VID", description: "Creative video generation and editing tool.", link: "https://runwayml.com" },
+  { symbol: "Pi", name: "Pika Labs", category: "VID", description: "AI video generation with stylized motion and storytelling.", link: "https://pika.art" },
+  { symbol: "Ha", name: "HeyGen", category: "VID", description: "Create professional avatar videos from text prompts.", link: "https://www.heygen.com" },
+  { symbol: "Sv", name: "Synthesia", category: "VID", description: "Create AI avatars for explainer and training videos.", link: "https://www.synthesia.io" },
+  { symbol: "Gh", name: "GitHub Copilot", category: "COD", description: "AI-powered coding assistant by GitHub and OpenAI.", link: "https://github.com/features/copilot" },
+  { symbol: "Re", name: "Replit", category: "COD", description: "Collaborative online IDE with AI code completion.", link: "https://replit.com" },
+  { symbol: "Ta", name: "Tabnine", category: "COD", description: "AI assistant for software developers with code completions.", link: "https://www.tabnine.com" },
+  { symbol: "Mu", name: "Mubert", category: "AUD", description: "Royalty-free AI-generated music for content creators.", link: "https://mubert.com" },
+  { symbol: "Au", name: "Aiva", category: "AUD", description: "Compose music using artificial intelligence for media and games.", link: "https://www.aiva.ai" },
+  { symbol: "De", name: "Descript", category: "AUD", description: "Edit podcasts and videos like documents.", link: "https://www.descript.com" },
+  { symbol: "Vo", name: "Voicemod", category: "AUD", description: "AI voice changer and real-time audio synthesis tool.", link: "https://www.voicemod.net" },
+  { symbol: "El", name: "ElevenLabs", category: "AUD", description: "AI voice cloning and ultra-realistic speech synthesis.", link: "https://www.elevenlabs.io" },
+  { symbol: "Ma", name: "MagicSlides", category: "BIZ", description: "AI-generated presentation slide decks from prompts.", link: "https://www.magicslides.app" },
+  { symbol: "To", name: "Tome", category: "BIZ", description: "Narrative-first storytelling tool powered by AI.", link: "https://tome.app" },
+  { symbol: "No", name: "Notion AI", category: "BIZ", description: "Boost productivity with writing and planning assistance.", link: "https://www.notion.so/product/ai" },
+  { symbol: "Po", name: "Poised", category: "BIZ", description: "Real-time AI speech coaching for professionals.", link: "https://www.poised.com" },
+  { symbol: "Ka", name: "Krea AI", category: "UX", description: "AI-enhanced UI/UX wireframing and visual design tool.", link: "https://www.krea.ai" },
+  { symbol: "Fi", name: "Figma AI", category: "UX", description: "Integrate AI features into collaborative interface design.", link: "https://www.figma.com" },
+  { symbol: "Ch", name: "Character.AI", category: "AGT", description: "Chat with custom AI characters and personalities.", link: "https://character.ai" },
+  { symbol: "Mg", name: "Magai", category: "AGT", description: "Multi-agent AI workflows for task automation and analysis.", link: "https://magai.co" }
 ];
 
 const categories = {
