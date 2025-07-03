@@ -114,7 +114,7 @@ export default function PeriodicTable() {
       <AnimateSharedLayout>
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
         >
           {filteredTools.map((tool, index) => (
             <motion.div
@@ -123,12 +123,11 @@ export default function PeriodicTable() {
               whileTap={{ scale: 0.97 }}
               key={index}
               onClick={() => setSelected(tool)}
-              className={`cursor-pointer text-center rounded-2xl p-4 border transition-all duration-150 select-none ${categoryColors[tool.category]} shadow hover:shadow-xl`}
+              className={`cursor-pointer text-center rounded-xl p-3 border transition-all duration-150 select-none ${categoryColors[tool.category]} shadow hover:shadow-xl`}
             >
-              <div className="text-lg font-semibold tracking-tight break-words">
+              <div className="text-sm font-semibold tracking-tight break-words">
                 {tool.name}
               </div>
-              <div className="text-xs font-medium opacity-75 mt-1">{tool.category}</div>
             </motion.div>
           ))}
         </motion.div>
