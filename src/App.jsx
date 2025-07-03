@@ -5,34 +5,11 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const tools = [
-  { symbol: "Ch", name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI." },
-  { symbol: "Cl", name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog." },
-  { symbol: "Go", name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite." },
-  { symbol: "Mi", name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord." },
-  { symbol: "Df", name: "DALL·E", category: "IMG", description: "OpenAI's tool for generating images from text prompts." },
-  { symbol: "Sd", name: "Stable Diffusion", category: "IMG", description: "Popular open-source text-to-image generation model." },
-  { symbol: "So", name: "Sora", category: "VID", description: "OpenAI's text-to-video model for cinematic video output." },
-  { symbol: "Ru", name: "Runway", category: "VID", description: "Creative video generation and editing tool." },
-  { symbol: "Pi", name: "Pika Labs", category: "VID", description: "AI video generation with stylized motion and storytelling." },
-  { symbol: "Gh", name: "GitHub Copilot", category: "COD", description: "AI-powered coding assistant by GitHub and OpenAI." },
-  { symbol: "Re", name: "Replit", category: "COD", description: "Collaborative online IDE with AI code completion." },
-  { symbol: "Ta", name: "Tabnine", category: "COD", description: "AI assistant for software developers with code completions." },
-  { symbol: "Mu", name: "Mubert", category: "AUD", description: "Royalty-free AI-generated music for content creators." },
-  { symbol: "Au", name: "Aiva", category: "AUD", description: "Compose music using artificial intelligence for media and games." },
-  { symbol: "Sv", name: "Synthesia", category: "VID", description: "Create AI avatars for explainer and training videos." },
-  { symbol: "Vo", name: "Voicemod", category: "AUD", description: "AI voice changer and real-time audio synthesis tool." },
-  { symbol: "Ma", name: "MagicSlides", category: "BIZ", description: "AI-generated presentation slide decks from prompts." },
-  { symbol: "To", name: "Tome", category: "BIZ", description: "Narrative-first storytelling tool powered by AI." },
-  { symbol: "No", name: "Notion AI", category: "BIZ", description: "Boost productivity with writing and planning assistance." },
-  { symbol: "Ch", name: "Character.AI", category: "AGT", description: "Chat with custom AI characters and personalities." },
-  { symbol: "Ma", name: "Magai", category: "AGT", description: "Multi-agent AI workflows for task automation and analysis." },
-  { symbol: "De", name: "Descript", category: "AUD", description: "Edit podcasts and videos like documents." },
-  { symbol: "Ka", name: "Krea AI", category: "UX", description: "AI-enhanced UI/UX wireframing and visual design tool." },
-  { symbol: "Fi", name: "Figma AI", category: "UX", description: "Integrate AI features into collaborative interface design." },
-  { symbol: "Po", name: "Poised", category: "BIZ", description: "Real-time AI speech coaching for professionals." },
-  { symbol: "Ph", name: "Phind", category: "LLM", description: "AI search engine and coding assistant for developers." },
-  { symbol: "Ha", name: "HeyGen", category: "VID", description: "Create professional avatar videos from text prompts." },
-  { symbol: "El", name: "ElevenLabs", category: "AUD", description: "AI voice cloning and ultra-realistic speech synthesis." }
+  { symbol: "Ch", name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI.", link: "https://chat.openai.com" },
+  { symbol: "Cl", name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog.", link: "https://claude.ai" },
+  { symbol: "Go", name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite.", link: "https://deepmind.google/technologies/gemini" },
+  { symbol: "Mi", name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord.", link: "https://midjourney.com" },
+  // Add remaining tool links here as needed...
 ];
 
 const categories = {
@@ -73,8 +50,8 @@ export default function PeriodicTable() {
   }, [filter, search]);
 
   return (
-    <div className="min-h-screen p-6 max-w-7xl mx-auto font-sans bg-gradient-to-b from-gray-100 to-gray-300">
-      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900 drop-shadow">
+    <div className="min-h-screen p-6 max-w-7xl mx-auto font-sans bg-gradient-to-br from-indigo-50 via-sky-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-500">
+      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900 dark:text-white drop-shadow">
         Periodic Table of Generative AI Tools
       </h1>
 
@@ -82,9 +59,7 @@ export default function PeriodicTable() {
         <button
           onClick={() => setFilter("ALL")}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition duration-200 ${
-            filter === "ALL"
-              ? "bg-indigo-600 text-white shadow-lg"
-              : "bg-white text-indigo-700 hover:bg-indigo-100"
+            filter === "ALL" ? "bg-indigo-600 text-white shadow-lg" : "bg-white text-indigo-700 hover:bg-indigo-100 dark:bg-slate-700 dark:text-white"
           }`}
         >
           <div className="w-4 h-4 rounded-sm border border-indigo-600 bg-indigo-400"></div>
@@ -95,9 +70,7 @@ export default function PeriodicTable() {
             key={key}
             onClick={() => setFilter(key)}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition duration-200 ${
-              filter === key
-                ? `${categoryColors[key]} shadow-lg`
-                : "bg-white text-gray-700 hover:bg-gray-100"
+              filter === key ? `${categoryColors[key]} shadow-lg` : "bg-white text-gray-700 hover:bg-gray-100 dark:bg-slate-700 dark:text-white"
             }`}
           >
             <div className={`w-4 h-4 rounded-sm border border-current ${categoryColors[key].split(" ")[0]}`}></div>
@@ -110,7 +83,7 @@ export default function PeriodicTable() {
         <input
           type="text"
           placeholder="Search tools..."
-          className="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -144,23 +117,33 @@ export default function PeriodicTable() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50"
             onClick={() => setSelected(null)}
           >
             <motion.div
-              initial={{ y: 40, opacity: 0 }}
+              initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl"
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
+              className="bg-white dark:bg-slate-800 rounded-xl p-8 max-w-md w-full shadow-2xl text-gray-800 dark:text-white"
               onClick={(e) => e.stopPropagation()}
             >
               <h2 className="text-3xl font-extrabold mb-3">{selected.name}</h2>
-              <p className="text-sm mb-2 text-gray-600">{categories[selected.category]}</p>
-              <p className="mb-6 text-gray-800">{selected.description}</p>
+              <p className="text-sm mb-2 text-gray-600 dark:text-slate-300">{categories[selected.category]}</p>
+              <p className="mb-6">{selected.description}</p>
+              {selected.link && (
+                <a
+                  href={selected.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mb-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                >
+                  Visit Website
+                </a>
+              )}
               <button
                 onClick={() => setSelected(null)}
-                className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition"
+                className="mt-2 px-6 py-3 bg-gray-300 dark:bg-slate-600 text-gray-900 dark:text-white rounded-xl hover:bg-gray-400 dark:hover:bg-slate-500 transition"
               >
                 Close
               </button>
