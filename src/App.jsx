@@ -5,34 +5,19 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const tools = [
-  { name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI.", link: "https://chat.openai.com" },
-  { name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog.", link: "https://claude.ai" },
-  { name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite.", link: "https://deepmind.google/technologies/gemini" },
-  { name: "Phind", category: "LLM", description: "AI search engine and coding assistant for developers.", link: "https://www.phind.com" },
-  { name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord.", link: "https://midjourney.com" },
-  { name: "DALL·E", category: "IMG", description: "OpenAI's tool for generating images from text prompts.", link: "https://openai.com/dall-e" },
-  { name: "Stable Diffusion", category: "IMG", description: "Popular open-source text-to-image generation model.", link: "https://stability.ai" },
-  { name: "Sora", category: "VID", description: "OpenAI's text-to-video model for cinematic video output.", link: "https://openai.com/sora" },
-  { name: "Runway", category: "VID", description: "Creative video generation and editing tool.", link: "https://runwayml.com" },
-  { name: "Pika Labs", category: "VID", description: "AI video generation with stylized motion and storytelling.", link: "https://pika.art" },
-  { name: "HeyGen", category: "VID", description: "Create professional avatar videos from text prompts.", link: "https://www.heygen.com" },
-  { name: "Synthesia", category: "VID", description: "Create AI avatars for explainer and training videos.", link: "https://www.synthesia.io" },
-  { name: "GitHub Copilot", category: "COD", description: "AI-powered coding assistant by GitHub and OpenAI.", link: "https://github.com/features/copilot" },
-  { name: "Replit", category: "COD", description: "Collaborative online IDE with AI code completion.", link: "https://replit.com" },
-  { name: "Tabnine", category: "COD", description: "AI assistant for software developers with code completions.", link: "https://www.tabnine.com" },
-  { name: "Mubert", category: "AUD", description: "Royalty-free AI-generated music for content creators.", link: "https://mubert.com" },
-  { name: "Aiva", category: "AUD", description: "Compose music using artificial intelligence for media and games.", link: "https://www.aiva.ai" },
-  { name: "Descript", category: "AUD", description: "Edit podcasts and videos like documents.", link: "https://www.descript.com" },
-  { name: "Voicemod", category: "AUD", description: "AI voice changer and real-time audio synthesis tool.", link: "https://www.voicemod.net" },
-  { name: "ElevenLabs", category: "AUD", description: "AI voice cloning and ultra-realistic speech synthesis.", link: "https://www.elevenlabs.io" },
-  { name: "MagicSlides", category: "BIZ", description: "AI-generated presentation slide decks from prompts.", link: "https://www.magicslides.app" },
-  { name: "Tome", category: "BIZ", description: "Narrative-first storytelling tool powered by AI.", link: "https://tome.app" },
-  { name: "Notion AI", category: "BIZ", description: "Boost productivity with writing and planning assistance.", link: "https://www.notion.so/product/ai" },
-  { name: "Poised", category: "BIZ", description: "Real-time AI speech coaching for professionals.", link: "https://www.poised.com" },
-  { name: "Krea AI", category: "UX", description: "AI-enhanced UI/UX wireframing and visual design tool.", link: "https://www.krea.ai" },
-  { name: "Figma AI", category: "UX", description: "Integrate AI features into collaborative interface design.", link: "https://www.figma.com" },
-  { name: "Character.AI", category: "AGT", description: "Chat with custom AI characters and personalities.", link: "https://character.ai" },
-  { name: "Magai", category: "AGT", description: "Multi-agent AI workflows for task automation and analysis.", link: "https://magai.co" }
+  { name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI.", link: "https://chat.openai.com", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
+  { name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog.", link: "https://claude.ai", logo: "https://upload.wikimedia.org/wikipedia/commons/4/47/Anthropic_Claude_Logo.png" },
+  { name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite.", link: "https://deepmind.google/technologies/gemini", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Google_Gemini_Logo.png" },
+  { name: "Phind", category: "LLM", description: "AI search engine and coding assistant for developers.", link: "https://www.phind.com", logo: "https://avatars.githubusercontent.com/u/111411952?s=200&v=4" },
+  { name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord.", link: "https://midjourney.com", logo: "https://midjourney.gitbook.io/_media/logo.png" },
+  { name: "DALL·E", category: "IMG", description: "OpenAI's tool for generating images from text prompts.", link: "https://openai.com/dall-e", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/DALL-E_Logo.svg" },
+  { name: "Stable Diffusion", category: "IMG", description: "Popular open-source text-to-image generation model.", link: "https://stability.ai", logo: "https://avatars.githubusercontent.com/u/102697082?s=200&v=4" },
+  { name: "Sora", category: "VID", description: "OpenAI's text-to-video model for cinematic video output.", link: "https://openai.com/sora", logo: "https://openai.com/content/images/2024/02/sora-logo.png" },
+  { name: "Runway", category: "VID", description: "Creative video generation and editing tool.", link: "https://runwayml.com", logo: "https://seeklogo.com/images/R/runway-logo-4FBAF5F0DF-seeklogo.com.png" },
+  { name: "Pika Labs", category: "VID", description: "AI video generation with stylized motion and storytelling.", link: "https://pika.art", logo: "https://avatars.githubusercontent.com/u/131074009?s=200&v=4" },
+  { name: "HeyGen", category: "VID", description: "Create professional avatar videos from text prompts.", link: "https://www.heygen.com", logo: "https://pbs.twimg.com/profile_images/1632710230303203331/XgxHRQra_400x400.jpg" },
+  { name: "Synthesia", category: "VID", description: "Create AI avatars for explainer and training videos.", link: "https://www.synthesia.io", logo: "https://assets-global.website-files.com/628e79fc0933229b19c3a112/629f0c6efaba0f355dc98015_synthesia-logo.png" }
+  // Add more tools and logos as needed
 ];
 
 const categories = {
@@ -65,47 +50,40 @@ export default function PeriodicTable() {
   const filteredTools = useMemo(() => {
     return tools.filter(tool => {
       const matchesCategory = filter === "ALL" || tool.category === filter;
-      const matchesSearch =
-        tool.name.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [filter, search]);
 
   return (
-    <div className="min-h-screen p-6 max-w-7xl mx-auto font-sans bg-gradient-to-br from-indigo-50 via-sky-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-500">
-      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900 dark:text-white drop-shadow">
+    <div className="min-h-screen p-4 max-w-7xl mx-auto font-sans bg-gradient-to-br from-indigo-50 via-sky-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-500">
+      <h1 className="text-3xl font-bold text-center mb-6 text-gray-900 dark:text-white drop-shadow">
         Periodic Table of Generative AI Tools
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-6 max-w-4xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-3 mb-4">
         <button
           onClick={() => setFilter("ALL")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition duration-200 ${
-            filter === "ALL" ? "bg-indigo-600 text-white shadow-lg" : "bg-white text-indigo-700 hover:bg-indigo-100 dark:bg-slate-700 dark:text-white"
-          }`}
+          className={`px-3 py-1.5 rounded-lg border text-sm font-medium ${filter === "ALL" ? "bg-indigo-600 text-white" : "bg-white text-indigo-700 dark:bg-slate-700 dark:text-white"}`}
         >
-          <div className="w-4 h-4 rounded-sm border border-indigo-600 bg-indigo-400"></div>
           All
         </button>
         {Object.entries(categories).map(([key, label]) => (
           <button
             key={key}
             onClick={() => setFilter(key)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition duration-200 ${
-              filter === key ? `${categoryColors[key]} shadow-lg` : "bg-white text-gray-700 hover:bg-gray-100 dark:bg-slate-700 dark:text-white"
-            }`}
+            className={`px-3 py-1.5 rounded-lg border text-sm font-medium ${filter === key ? `${categoryColors[key]} shadow-md` : "bg-white text-gray-800 dark:bg-slate-700 dark:text-white"}`}
           >
-            <div className={`w-4 h-4 rounded-sm border border-current ${categoryColors[key].split(" ")[0]}`}></div>
             {label}
           </button>
         ))}
       </div>
 
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-4">
         <input
           type="text"
           placeholder="Search tools..."
-          className="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white"
+          className="px-3 py-1.5 text-sm border rounded-md w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -114,7 +92,7 @@ export default function PeriodicTable() {
       <AnimateSharedLayout>
         <motion.div
           layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
         >
           {filteredTools.map((tool, index) => (
             <motion.div
@@ -123,9 +101,12 @@ export default function PeriodicTable() {
               whileTap={{ scale: 0.97 }}
               key={index}
               onClick={() => setSelected(tool)}
-              className={`cursor-pointer text-center rounded-xl p-3 border transition-all duration-150 select-none ${categoryColors[tool.category]} shadow hover:shadow-xl`}
+              className={`cursor-pointer text-center rounded-lg p-2 border ${categoryColors[tool.category]} shadow hover:shadow-lg transition`}
             >
-              <div className="text-sm font-semibold tracking-tight break-words">
+              {tool.logo && (
+                <img src={tool.logo} alt={tool.name} className="mx-auto mb-1.5 h-8 w-8 object-contain" />
+              )}
+              <div className="text-xs font-medium leading-snug break-words">
                 {tool.name}
               </div>
             </motion.div>
@@ -148,25 +129,25 @@ export default function PeriodicTable() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
               transition={{ type: "spring", stiffness: 260, damping: 25 }}
-              className="bg-white dark:bg-slate-800 rounded-xl p-8 max-w-md w-full shadow-2xl text-gray-800 dark:text-white"
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 max-w-md w-full shadow-2xl text-gray-800 dark:text-white"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-3xl font-extrabold mb-3">{selected.name}</h2>
-              <p className="text-sm mb-2 text-gray-600 dark:text-slate-300">{categories[selected.category]}</p>
-              <p className="mb-6">{selected.description}</p>
+              <h2 className="text-2xl font-bold mb-2">{selected.name}</h2>
+              <p className="text-sm mb-1 text-gray-600 dark:text-slate-300">{categories[selected.category]}</p>
+              <p className="mb-4 text-sm">{selected.description}</p>
               {selected.link && (
                 <a
                   href={selected.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mb-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                  className="inline-block mb-3 px-3 py-1.5 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700"
                 >
                   Visit Website
                 </a>
               )}
               <button
                 onClick={() => setSelected(null)}
-                className="mt-2 px-6 py-3 bg-gray-300 dark:bg-slate-600 text-gray-900 dark:text-white rounded-xl hover:bg-gray-400 dark:hover:bg-slate-500 transition"
+                className="mt-2 px-4 py-2 bg-gray-300 dark:bg-slate-600 text-sm text-gray-900 dark:text-white rounded hover:bg-gray-400 dark:hover:bg-slate-500"
               >
                 Close
               </button>
