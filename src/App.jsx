@@ -66,8 +66,7 @@ export default function PeriodicTable() {
     return tools.filter(tool => {
       const matchesCategory = filter === "ALL" || tool.category === filter;
       const matchesSearch =
-        tool.name.toLowerCase().includes(search.toLowerCase()) ||
-        tool.symbol.toLowerCase().includes(search.toLowerCase());
+        tool.name.toLowerCase().includes(search.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [filter, search]);
@@ -115,19 +114,21 @@ export default function PeriodicTable() {
       <AnimateSharedLayout>
         <motion.div
           layout
-          className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {filteredTools.map((tool, index) => (
             <motion.div
               layout
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
               key={index}
               onClick={() => setSelected(tool)}
               className={`cursor-pointer text-center rounded-2xl p-4 border transition-all duration-150 select-none ${categoryColors[tool.category]} shadow hover:shadow-xl`}
             >
-              <div className="text-2xl font-extrabold tracking-wide">{tool.symbol}</div>
-              <div className="text-xs font-semibold">{tool.category}</div>
+              <div className="text-lg font-semibold tracking-tight break-words">
+                {tool.name}
+              </div>
+              <div className="text-xs font-medium opacity-75 mt-1">{tool.category}</div>
             </motion.div>
           ))}
         </motion.div>
