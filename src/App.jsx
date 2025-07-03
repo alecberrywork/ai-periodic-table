@@ -1,8 +1,5 @@
-// Interactive Periodic Table of Generative AI Tools
-// Built with React + Tailwind CSS
-
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const tools = [
   { symbol: "Ch", name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI." },
@@ -46,41 +43,112 @@ const categories = {
   UX: "Design & UX Tools"
 };
 
+const categoryColors = {
+  LLM: "bg-purple-300 border-purple-500 text-purple-900",
+  IMG: "bg-pink-300 border-pink-500 text-pink-900",
+  VID: "bg-yellow-300 border-yellow-500 text-yellow-900",
+  COD: "bg-green-300 border-green-500 text-green-900",
+  AUD: "bg-blue-300 border-blue-500 text-blue-900",
+  BIZ: "bg-indigo-300 border-indigo-500 text-indigo-900",
+  AGT: "bg-red-300 border-red-500 text-red-900",
+  UX: "bg-teal-300 border-teal-500 text-teal-900"
+};
+
 export default function PeriodicTable() {
   const [selected, setSelected] = useState(null);
+  const [filter, setFilter] = useState("ALL");
+  const [search, setSearch] = useState("");
+
+  // Filter tools by category and search
+  const filteredTools = useMemo(() => {
+    return tools.filter(tool => {
+      const matchesCategory = filter === "ALL" || tool.category === filter;
+      const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase()) || tool.symbol.toLowerCase().includes(search.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [filter, search]);
 
   return (
     <div className="p-4 max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-6">Periodic Table of Generative AI Tools</h1>
-      <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-2">
-        {tools.map((tool, index) => (
+
+      {/* Search & Filter Controls */}
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
+        <input
+          type="text"
+          placeholder="Search tools..."
+          className="px-4 py-2 border rounded-lg w-60 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button
+          onClick={() => setFilter("ALL")}
+          className={`px-4 py-2 rounded-lg border ${filter === "ALL" ? "bg-indigo-500 text-white" : "bg-white text-indigo-700 hover:bg-indigo-100"}`}
+        >
+          All
+        </button>
+        {Object.entries(categories).map(([key, label]) => (
+          <button
+            key={key}
+            onClick={() => setFilter(key)}
+            className={`px-4 py-2 rounded-lg border ${
+              filter === key
+                ? `${categoryColors[key]} font-semibold`
+                : `bg-white text-gray-700 hover:bg-gray-100`
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid of Tools */}
+      <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-3">
+        {filteredTools.map((tool, index) => (
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, boxShadow: "0 0 8px rgba(0,0,0,0.3)" }}
             key={index}
             onClick={() => setSelected(tool)}
-            className="cursor-pointer text-center bg-white hover:bg-gray-50 shadow rounded-2xl p-2 border"
+            className={`cursor-pointer text-center rounded-2xl p-3 border ${categoryColors[tool.category]} select-none`}
           >
-            <div className="text-lg font-semibold">{tool.symbol}</div>
-            <div className="text-xs text-gray-500">{tool.category}</div>
+            <div className="text-xl font-bold">{tool.symbol}</div>
+            <div className="text-xs font-semibold">{tool.category}</div>
           </motion.div>
         ))}
       </div>
 
-      {selected && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-xl">
-            <h2 className="text-2xl font-bold mb-2">{selected.name}</h2>
-            <p className="text-sm mb-1 text-gray-500">{categories[selected.category]}</p>
-            <p className="mb-4">{selected.description}</p>
-            <button
-              onClick={() => setSelected(null)}
-              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700"
+      {/* Modal */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={() => setSelected(null)}
+          >
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white rounded-xl p-6 max-w-md w-full shadow-xl"
+              onClick={e => e.stopPropagation()}
             >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+              <h2 className="text-2xl font-bold mb-2">{selected.name}</h2>
+              <p className="text-sm mb-1 text-gray-500">{categories[selected.category]}</p>
+              <p className="mb-4">{selected.description}</p>
+              <button
+                onClick={() => setSelected(null)}
+                className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
