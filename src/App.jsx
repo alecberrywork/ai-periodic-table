@@ -1,8 +1,38 @@
+// Interactive Periodic Table of Generative AI Tools
+// Built with React + Tailwind CSS
+
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const tools = [
-  // ... your existing tools array ...
+  { symbol: "Ch", name: "ChatGPT", category: "LLM", description: "General-purpose conversational AI by OpenAI." },
+  { symbol: "Cl", name: "Claude", category: "LLM", description: "Anthropic’s constitutional AI for safe and helpful dialog." },
+  { symbol: "Go", name: "Gemini", category: "LLM", description: "Google’s multimodal large language model suite." },
+  { symbol: "Mi", name: "Midjourney", category: "IMG", description: "AI-powered artistic image generation via Discord." },
+  { symbol: "Df", name: "DALL·E", category: "IMG", description: "OpenAI's tool for generating images from text prompts." },
+  { symbol: "Sd", name: "Stable Diffusion", category: "IMG", description: "Popular open-source text-to-image generation model." },
+  { symbol: "So", name: "Sora", category: "VID", description: "OpenAI's text-to-video model for cinematic video output." },
+  { symbol: "Ru", name: "Runway", category: "VID", description: "Creative video generation and editing tool." },
+  { symbol: "Pi", name: "Pika Labs", category: "VID", description: "AI video generation with stylized motion and storytelling." },
+  { symbol: "Gh", name: "GitHub Copilot", category: "COD", description: "AI-powered coding assistant by GitHub and OpenAI." },
+  { symbol: "Re", name: "Replit", category: "COD", description: "Collaborative online IDE with AI code completion." },
+  { symbol: "Ta", name: "Tabnine", category: "COD", description: "AI assistant for software developers with code completions." },
+  { symbol: "Mu", name: "Mubert", category: "AUD", description: "Royalty-free AI-generated music for content creators." },
+  { symbol: "Au", name: "Aiva", category: "AUD", description: "Compose music using artificial intelligence for media and games." },
+  { symbol: "Sv", name: "Synthesia", category: "VID", description: "Create AI avatars for explainer and training videos." },
+  { symbol: "Vo", name: "Voicemod", category: "AUD", description: "AI voice changer and real-time audio synthesis tool." },
+  { symbol: "Ma", name: "MagicSlides", category: "BIZ", description: "AI-generated presentation slide decks from prompts." },
+  { symbol: "To", name: "Tome", category: "BIZ", description: "Narrative-first storytelling tool powered by AI." },
+  { symbol: "No", name: "Notion AI", category: "BIZ", description: "Boost productivity with writing and planning assistance." },
+  { symbol: "Ch", name: "Character.AI", category: "AGT", description: "Chat with custom AI characters and personalities." },
+  { symbol: "Ma", name: "Magai", category: "AGT", description: "Multi-agent AI workflows for task automation and analysis." },
+  { symbol: "De", name: "Descript", category: "AUD", description: "Edit podcasts and videos like documents." },
+  { symbol: "Ka", name: "Krea AI", category: "UX", description: "AI-enhanced UI/UX wireframing and visual design tool." },
+  { symbol: "Fi", name: "Figma AI", category: "UX", description: "Integrate AI features into collaborative interface design." },
+  { symbol: "Po", name: "Poised", category: "BIZ", description: "Real-time AI speech coaching for professionals." },
+  { symbol: "Ph", name: "Phind", category: "LLM", description: "AI search engine and coding assistant for developers." },
+  { symbol: "Ha", name: "HeyGen", category: "VID", description: "Create professional avatar videos from text prompts." },
+  { symbol: "El", name: "ElevenLabs", category: "AUD", description: "AI voice cloning and ultra-realistic speech synthesis." }
 ];
 
 const categories = {
@@ -48,40 +78,37 @@ export default function PeriodicTable() {
         Periodic Table of Generative AI Tools
       </h1>
 
-      {/* Combined Key + Filters */}
-      <div className="flex flex-wrap justify-center gap-4 mb-8 max-w-4xl mx-auto">
-        {/* All Button */}
+      {/* Combined Filter + Legend */}
+      <div className="flex flex-wrap justify-center gap-4 mb-6 max-w-4xl mx-auto">
         <button
           onClick={() => setFilter("ALL")}
-          className={`flex items-center gap-2 px-5 py-2 rounded-lg border font-semibold transition ${
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition ${
             filter === "ALL"
               ? "bg-indigo-600 text-white shadow-lg"
               : "bg-white text-indigo-700 hover:bg-indigo-100"
           }`}
         >
-          <div className="w-5 h-5 rounded-sm border border-indigo-600 bg-indigo-400"></div>
+          <div className="w-4 h-4 rounded-sm border border-indigo-600 bg-indigo-400"></div>
           All
         </button>
-
-        {/* Category Buttons */}
         {Object.entries(categories).map(([key, label]) => (
           <button
             key={key}
             onClick={() => setFilter(key)}
-            className={`flex items-center gap-2 px-5 py-2 rounded-lg border font-semibold transition ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg border font-semibold transition ${
               filter === key
                 ? `${categoryColors[key]} shadow-lg`
                 : "bg-white text-gray-700 hover:bg-gray-100"
             }`}
           >
-            <div className={`w-5 h-5 rounded-sm border border-current ${categoryColors[key].split(" ")[0]}`}></div>
+            <div className={`w-4 h-4 rounded-sm border border-current ${categoryColors[key].split(" ")[0]}`}></div>
             {label}
           </button>
         ))}
       </div>
 
-      {/* Search Input */}
-      <div className="flex justify-center mb-8">
+      {/* Search */}
+      <div className="flex justify-center mb-6">
         <input
           type="text"
           placeholder="Search tools..."
@@ -91,7 +118,7 @@ export default function PeriodicTable() {
         />
       </div>
 
-      {/* Grid of Tools */}
+      {/* Grid */}
       <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-4">
         {filteredTools.map((tool, index) => (
           <motion.div
