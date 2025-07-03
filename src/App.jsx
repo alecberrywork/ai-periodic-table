@@ -59,7 +59,6 @@ export default function PeriodicTable() {
   const [filter, setFilter] = useState("ALL");
   const [search, setSearch] = useState("");
 
-  // Filter tools by category and search
   const filteredTools = useMemo(() => {
     return tools.filter(tool => {
       const matchesCategory = filter === "ALL" || tool.category === filter;
@@ -69,21 +68,40 @@ export default function PeriodicTable() {
   }, [filter, search]);
 
   return (
-    <div className="p-4 max-w-7xl mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-6">Periodic Table of Generative AI Tools</h1>
+    <div className="p-6 max-w-7xl mx-auto font-sans">
+      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900">
+        Periodic Table of Generative AI Tools
+      </h1>
+
+      {/* Legend / Key */}
+      <div className="flex flex-wrap justify-center gap-4 mb-6 max-w-3xl mx-auto">
+        {Object.entries(categories).map(([key, label]) => (
+          <div
+            key={key}
+            className={`flex items-center gap-2 border-2 rounded-lg px-3 py-1 cursor-default select-none ${categoryColors[key]}`}
+          >
+            <div className="w-5 h-5 rounded-sm border border-current"></div>
+            <span className="font-semibold text-sm">{label}</span>
+          </div>
+        ))}
+      </div>
 
       {/* Search & Filter Controls */}
-      <div className="flex flex-wrap justify-center gap-3 mb-6">
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
         <input
           type="text"
           placeholder="Search tools..."
-          className="px-4 py-2 border rounded-lg w-60 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
           onClick={() => setFilter("ALL")}
-          className={`px-4 py-2 rounded-lg border ${filter === "ALL" ? "bg-indigo-500 text-white" : "bg-white text-indigo-700 hover:bg-indigo-100"}`}
+          className={`px-5 py-2 rounded-lg border transition ${
+            filter === "ALL"
+              ? "bg-indigo-600 text-white shadow-lg"
+              : "bg-white text-indigo-700 hover:bg-indigo-100"
+          }`}
         >
           All
         </button>
@@ -91,10 +109,10 @@ export default function PeriodicTable() {
           <button
             key={key}
             onClick={() => setFilter(key)}
-            className={`px-4 py-2 rounded-lg border ${
+            className={`px-5 py-2 rounded-lg border transition ${
               filter === key
-                ? `${categoryColors[key]} font-semibold`
-                : `bg-white text-gray-700 hover:bg-gray-100`
+                ? `${categoryColors[key]} font-semibold shadow-lg`
+                : "bg-white text-gray-700 hover:bg-gray-100"
             }`}
           >
             {label}
@@ -103,15 +121,15 @@ export default function PeriodicTable() {
       </div>
 
       {/* Grid of Tools */}
-      <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-4">
         {filteredTools.map((tool, index) => (
           <motion.div
-            whileHover={{ scale: 1.1, boxShadow: "0 0 8px rgba(0,0,0,0.3)" }}
+            whileHover={{ scale: 1.1, boxShadow: "0 0 12px rgba(0,0,0,0.25)" }}
             key={index}
             onClick={() => setSelected(tool)}
-            className={`cursor-pointer text-center rounded-2xl p-3 border ${categoryColors[tool.category]} select-none`}
+            className={`cursor-pointer text-center rounded-2xl p-4 border transition select-none ${categoryColors[tool.category]}`}
           >
-            <div className="text-xl font-bold">{tool.symbol}</div>
+            <div className="text-2xl font-extrabold tracking-wide">{tool.symbol}</div>
             <div className="text-xs font-semibold">{tool.category}</div>
           </motion.div>
         ))}
@@ -125,23 +143,23 @@ export default function PeriodicTable() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
             onClick={() => setSelected(null)}
           >
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white rounded-xl p-6 max-w-md w-full shadow-xl"
-              onClick={e => e.stopPropagation()}
+              exit={{ y: 40, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-2xl font-bold mb-2">{selected.name}</h2>
-              <p className="text-sm mb-1 text-gray-500">{categories[selected.category]}</p>
-              <p className="mb-4">{selected.description}</p>
+              <h2 className="text-3xl font-extrabold mb-3">{selected.name}</h2>
+              <p className="text-sm mb-2 text-gray-600">{categories[selected.category]}</p>
+              <p className="mb-6 text-gray-800">{selected.description}</p>
               <button
                 onClick={() => setSelected(null)}
-                className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700"
+                className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition"
               >
                 Close
               </button>
