@@ -1,4 +1,3 @@
-// App.jsx
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { X } from "lucide-react";
@@ -11,7 +10,8 @@ const tools = [
     logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg",
     description: "Automation platform connecting apps to automate workflows.",
     businessValue: "Saves time by automating repetitive tasks across tools.",
-    govUseCase: "Can help DWP automate benefit processing across departments, improving service delivery and reducing administrative load.",
+    govUseCase:
+      "Can help DWP automate benefit processing across departments, improving service delivery and reducing administrative load.",
     caseStudy:
       "The UK Government Digital Service uses Zapier to automate routine notifications and data syncs, saving time for civil servants.",
     reference: "https://zapier.com/customers/uk-government",
@@ -27,8 +27,7 @@ const tools = [
       "Useful for coordinating interdepartmental workflows within DWP (e.g., housing, pensions, health) through low-code integrations.",
     caseStudy:
       "A UK local council leveraged Make to automate cross-team case management workflows, improving response times by 30%.",
-    reference:
-      "https://www.make.com/en/customers/local-government-case-study",
+    reference: "https://www.make.com/en/customers/local-government-case-study",
     link: "https://www.make.com",
   },
 
@@ -56,8 +55,7 @@ const tools = [
       "Helps DWP policy and operations teams manage collaborative content like guidance docs, policy notes, and internal FAQs.",
     caseStudy:
       "A UK government department adopted Notion AI for collaborative policy drafting, increasing document turnaround speed by 40%.",
-    reference:
-      "https://www.notion.so/blog/government-productivity",
+    reference: "https://www.notion.so/blog/government-productivity",
     link: "https://www.notion.so/product/ai",
   },
   {
@@ -70,8 +68,7 @@ const tools = [
       "Useful for drafting benefit announcements, policy updates, and correspondence tailored to citizen needs.",
     caseStudy:
       "A Canadian provincial agency used Copy.ai to generate citizen communications, reducing manual effort by 35%.",
-    reference:
-      "https://www.copy.ai/customers/canadian-government",
+    reference: "https://www.copy.ai/customers/canadian-government",
     link: "https://www.copy.ai",
   },
   {
@@ -84,8 +81,7 @@ const tools = [
       "Powers DWP’s digital interfaces with clear, consistent written content across web, SMS, and email channels.",
     caseStudy:
       "UK local authorities improved citizen engagement by generating personalized messages with Writesonic.",
-    reference:
-      "https://writesonic.com/case-studies/local-government",
+    reference: "https://writesonic.com/case-studies/local-government",
     link: "https://writesonic.com",
   },
 
@@ -100,8 +96,7 @@ const tools = [
       "Supports DWP developers by suggesting context-aware code, speeding up delivery of internal tools and citizen-facing apps.",
     caseStudy:
       "A government IT team improved coding efficiency by 25% using GitHub Copilot during development sprints.",
-    reference:
-      "https://github.com/features/copilot#case-studies",
+    reference: "https://github.com/features/copilot#case-studies",
     link: "https://copilot.github.com",
   },
   {
@@ -114,8 +109,7 @@ const tools = [
       "Assists DWP engineering teams with intelligent code suggestions, reducing bugs and boosting productivity.",
     caseStudy:
       "A European government agency integrated Tabnine to enhance developer collaboration and code quality.",
-    reference:
-      "https://www.tabnine.com/blog/government-technology",
+    reference: "https://www.tabnine.com/blog/government-technology",
     link: "https://tabnine.com",
   },
 
@@ -130,8 +124,7 @@ const tools = [
       "Generates visuals for DWP campaigns, from digital inclusion efforts to disability support services outreach.",
     caseStudy:
       "A European public health body used Midjourney to create impactful visuals for mental health awareness campaigns.",
-    reference:
-      "https://midjourney.com/blog/public-sector-campaigns",
+    reference: "https://midjourney.com/blog/public-sector-campaigns",
     link: "https://www.midjourney.com",
   },
   {
@@ -144,8 +137,7 @@ const tools = [
       "Used by DWP teams to create illustrations and explainer visuals for training and citizen-facing comms.",
     caseStudy:
       "The US Department of Education prototyped educational visuals using DALL·E 2 to improve remote learning materials.",
-    reference:
-      "https://openai.com/dall-e-2-case-studies",
+    reference: "https://openai.com/dall-e-2-case-studies",
     link: "https://openai.com/dall-e-2/",
   },
   {
@@ -158,8 +150,7 @@ const tools = [
       "Supports visual storytelling in DWP learning resources and web content.",
     caseStudy:
       "A UK government education unit created accessible imagery for digital training with Stable Diffusion.",
-    reference:
-      "https://stablediffusionweb.com/case-studies",
+    reference: "https://stablediffusionweb.com/case-studies",
     link: "https://stablediffusionweb.com",
   },
 
@@ -176,24 +167,21 @@ const tools = [
       "Supports DWP’s citizen engagement efforts through chatbots, summarised documents, and digital assistants.",
     caseStudy:
       "Several UK government digital services use ChatGPT-based chatbots to improve citizen support and reduce call center load.",
-    reference:
-      "https://chat.openai.com/case-studies",
+    reference: "https://chat.openai.com/case-studies",
     link: "https://chat.openai.com",
   },
   {
     name: "GPT-4",
     category: "LLM",
     logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
-    description:
-      "The latest OpenAI large language model with improved reasoning.",
+    description: "The latest OpenAI large language model with improved reasoning.",
     businessValue:
       "Enables more complex automation and natural language understanding.",
     govUseCase:
       "Assists DWP policy units with natural language summaries, regulatory exploration, and citizen correspondence analysis.",
     caseStudy:
       "DWP researchers use GPT-4 for summarizing policy documents and analyzing citizen feedback efficiently.",
-    reference:
-      "https://openai.com/gpt-4#case-studies",
+    reference: "https://openai.com/gpt-4#case-studies",
     link: "https://openai.com/gpt-4",
   },
   {
@@ -208,8 +196,7 @@ const tools = [
       "Offers DWP a safer, more aligned AI for use in citizen-facing tools and sensitive case support scenarios.",
     caseStudy:
       "A government agency in the US tested Claude for ethical AI chatbot deployments in sensitive services.",
-    reference:
-      "https://www.anthropic.com/product/case-studies",
+    reference: "https://www.anthropic.com/product/case-studies",
     link: "https://www.anthropic.com/product",
   },
   {
@@ -218,22 +205,19 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Perplexity_AI_Logo.png",
     description:
       "AI-powered search engine that answers questions using real-time web data.",
-    businessValue:
-      "Enhances research and customer-facing knowledge base search.",
+    businessValue: "Enhances research and customer-facing knowledge base search.",
     govUseCase:
       "Helps DWP staff and citizens surface accurate, up-to-date information quickly and transparently.",
     caseStudy:
       "A UK public library system integrated Perplexity AI to improve public access to information.",
-    reference:
-      "https://www.perplexity.ai/case-studies",
+    reference: "https://www.perplexity.ai/case-studies",
     link: "https://www.perplexity.ai",
   },
   {
     name: "Hugging Face",
     category: "LLM",
     logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-    description:
-      "Open platform for sharing and deploying machine learning models.",
+    description: "Open platform for sharing and deploying machine learning models.",
     businessValue: "Empowers AI experimentation and open-source model deployment.",
     govUseCase:
       "Supports open-source experimentation and model deployment for secure, explainable DWP AI services.",
@@ -282,8 +266,7 @@ const tools = [
       "Assists DWP with developing engaging citizen education material, including visual guides and infographics.",
     caseStudy:
       "A government health agency used Canva to create multilingual visual guides quickly and efficiently.",
-    reference:
-      "https://www.canva.com/case-studies/health-agency",
+    reference: "https://www.canva.com/case-studies/health-agency",
     link: "https://www.canva.com",
   },
   {
@@ -325,8 +308,7 @@ const tools = [
       "Supports DWP inclusion strategies by producing multilingual explainer videos using digital avatars.",
     caseStudy:
       "A European government agency created accessible videos for diverse citizens, increasing understanding and satisfaction.",
-    reference:
-      "https://www.synthesia.io/case-studies",
+    reference: "https://www.synthesia.io/case-studies",
     link: "https://www.synthesia.io",
   },
   {
@@ -370,7 +352,20 @@ const tools = [
   },
 ];
 
+// Category color map for buttons
+const categoryColors = {
+  ALL: "bg-pink-600 text-white",
+  AGT: "bg-red-600 text-white",
+  BIZ: "bg-green-600 text-white",
+  COD: "bg-yellow-600 text-black",
+  IMG: "bg-blue-600 text-white",
+  LLM: "bg-purple-600 text-white",
+  UX: "bg-pink-500 text-white",
+  VID: "bg-teal-600 text-white",
+};
+
 const categories = [
+  "ALL",
   "AGT",
   "BIZ",
   "COD",
@@ -390,31 +385,20 @@ export default function App() {
   }, [filterCategory]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 to-pink-900 p-8 text-indigo-50">
-      <h1 className="text-4xl font-extrabold mb-6 text-center">
+    <div className="min-h-screen bg-indigo-900 text-indigo-50 p-6">
+      <h1 className="text-4xl font-extrabold mb-8 text-center">
         Interactive Periodic Table of Generative AI Tools
       </h1>
 
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
-        <button
-          onClick={() => setFilterCategory("ALL")}
-          className={`px-5 py-2 rounded font-semibold ${
-            filterCategory === "ALL"
-              ? "bg-pink-600 text-white"
-              : "bg-indigo-700 text-indigo-200 hover:bg-pink-600"
-          }`}
-        >
-          All
-        </button>
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilterCategory(cat)}
             className={`px-5 py-2 rounded font-semibold ${
-              filterCategory === cat
-                ? "bg-pink-600 text-white"
-                : "bg-indigo-700 text-indigo-200 hover:bg-pink-600"
+              categoryColors[cat] ||
+              "bg-indigo-700 text-indigo-200 hover:bg-pink-600"
             }`}
           >
             {cat}
@@ -501,13 +485,13 @@ export default function App() {
                 <p className="mb-3">
                   <strong>Case Study:</strong> {selectedTool.caseStudy}
                 </p>
-                <p className="mb-6">
+                <p className="mb-6 break-words">
                   <strong>Reference:</strong>{" "}
                   <a
                     href={selectedTool.reference}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-pink-400 hover:text-pink-600"
+                    className="underline text-pink-400 hover:text-pink-600 break-all"
                   >
                     {selectedTool.reference}
                   </a>
