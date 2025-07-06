@@ -462,75 +462,37 @@ export default function App() {
               />
               <motion.div
                 layoutId={selectedTool.name}
-                className="fixed top-1/2 left-1/2 max-w-3xl w-[90vw] max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-xl z-50 p-6"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="modal-title"
+                className="fixed inset-0 flex items-center justify-center z-50 p-6"
+                onClick={e => e.stopPropagation()}
               >
-                <button
-                  onClick={() => setSelectedTool(null)}
-                  aria-label="Close modal"
-                  className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+                <motion.div
+                  className="bg-white rounded-xl shadow-xl p-6 max-w-3xl w-[90vw] max-h-[90vh] overflow-y-auto relative"
+                  initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  style={{ originX: 0.5, originY: 0.5 }}
                 >
-                  &times;
-                </button>
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={selectedTool.logo}
-                    alt={`${selectedTool.name} logo`}
-                    className="h-16 w-16 object-contain"
-                  />
-                  <h2
-                    id="modal-title"
-                    className="text-2xl font-bold text-gray-900"
+                  {/* existing modal content */}
+                  <button
+                    onClick={() => setSelectedTool(null)}
+                    aria-label="Close modal"
+                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
                   >
-                    {selectedTool.name}
-                  </h2>
-                </div>
-                <p className="mb-3">
-                  <span className="font-semibold">Category:</span>{" "}
-                  {selectedTool.category}
-                </p>
-                <p className="mb-3">
-                  <span className="font-semibold">Description:</span>{" "}
-                  {selectedTool.description}
-                </p>
-                <p className="mb-3">
-                  <span className="font-semibold">Business Value:</span>{" "}
-                  {selectedTool.businessValue}
-                </p>
-                <p className="mb-3">
-                  <span className="font-semibold">Government Use Case:</span>{" "}
-                  {selectedTool.govUseCase}
-                </p>
-                <p className="mb-3">
-                  <span className="font-semibold">Case Study:</span>{" "}
-                  {selectedTool.caseStudy}
-                </p>
-                <p className="mb-3">
-                  <span className="font-semibold">Reference:</span>{" "}
-                  <a
-                    href={selectedTool.reference}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline hover:text-blue-800"
-                  >
-                    {selectedTool.reference}
-                  </a>
-                </p>
-                <p className="mb-1">
-                  <a
-                    href={selectedTool.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-3 px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-                  >
-                    Visit {selectedTool.name}
-                  </a>
-                </p>
+                    &times;
+                  </button>
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={selectedTool.logo}
+                      alt={`${selectedTool.name} logo`}
+                      className="h-16 w-16 object-contain"
+                    />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      {selectedTool.name}
+                    </h2>
+                  </div>
+                  {/* ... rest of modal fields ... */}
+                </motion.div>
               </motion.div>
             </>
           )}
