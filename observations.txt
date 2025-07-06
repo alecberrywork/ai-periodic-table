@@ -11,3 +11,11 @@ ChatGPT did make some mistakes too
 ChatGPT was also selective sometimes over what it gave me - such as sometimes it would give me everything I wanted, other times it would decide to just give me an example
 
 I was learning somewhat but not necesarrily as much as I would if I had to do everything myself - which meant I was ultimately more dependent on the tool
+
+It also seemed a bit forgetful - it would change the list of tools, or change the case study
+
+you have to be very specific and best to add in one change at a time
+
+not very procedural - after each change I didnt really think about what had gone before
+
+fine for a greenfield project like this - how would it work in a complex existing project I'm not sure
