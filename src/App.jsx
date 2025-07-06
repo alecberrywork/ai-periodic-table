@@ -167,9 +167,7 @@ const tools = [
     businessValue: "Enables quick video marketing content production.",
     govUseCase: "Creates informational videos for citizen awareness campaigns.",
     link: "https://lumen5.com"
-  }
-
-  // New tools
+  },
   {
     name: "Perplexity AI",
     category: "LLM",
@@ -251,8 +249,6 @@ const tools = [
     govUseCase: "Deploys secure, task-specific language models for sensitive public applications.",
     link: "https://cohere.com"
   }
-
-
 ];
 
 const categories = {
