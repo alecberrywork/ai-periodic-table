@@ -1,5 +1,5 @@
 // Interactive Periodic Table of Generative AI Tools with Business and Government Value
-// Built with React + Tailwind CSS
+// Built with React + Tailwind CSS x
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
@@ -36,7 +36,7 @@ const tools = [
   {
     name: "Midjourney",
     category: "IMG",
-    logo: "https://i.ibb.co/SKmWLqW/midjourney-icon.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Midjourney_Emblem.png",
     description: "AI tool that generates images from textual prompts.",
     businessValue: "Accelerates creative workflows and marketing content generation.",
     govUseCase: "Useful for public campaign visuals and data visualization.",
@@ -63,7 +63,7 @@ const tools = [
   {
     name: "RunwayML",
     category: "VID",
-    logo: "https://i.ibb.co/W6Fq4vz/runwayml-logo.png",
+    logo: "https://uploads-ssl.webflow.com/646b86b7d1e7aa5fef24cf3b/6477c74014b6e5ce2a35cf7a_logo.png",
     description: "Video editing and generation powered by AI.",
     businessValue: "Cuts down video production times and costs.",
     govUseCase: "Creates educational videos and public safety announcements.",
@@ -72,7 +72,7 @@ const tools = [
   {
     name: "Synthesia",
     category: "VID",
-    logo: "https://i.ibb.co/7pPjbt0/synthesia-logo.png",
+    logo: "https://uploads-ssl.webflow.com/6372f3a6f2b83f3efbcbfc14/63f5b2b3fbe09b59c674116b_synthesia.png",
     description: "AI video generation platform with digital avatars.",
     businessValue: "Enables fast creation of personalized marketing and training videos.",
     govUseCase: "Generates videos for citizen education and multilingual outreach.",
@@ -90,7 +90,7 @@ const tools = [
   {
     name: "Tabnine",
     category: "COD",
-    logo: "https://i.ibb.co/Bsbb08V/tabnine-logo.png",
+    logo: "https://www.tabnine.com/images/logo.png",
     description: "AI code completion tool supporting multiple languages.",
     businessValue: "Speeds up coding and reduces errors.",
     govUseCase: "Improves developer efficiency in government IT projects.",
@@ -99,7 +99,7 @@ const tools = [
   {
     name: "Jasper",
     category: "BIZ",
-    logo: "https://i.ibb.co/YbVzNjb/jasper-logo.png",
+    logo: "https://www.jasper.ai/images/brand/jasper-logo-full-color.svg",
     description: "AI copywriting assistant for marketing and content creation.",
     businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
     govUseCase: "Supports communication teams in drafting public messages.",
@@ -126,7 +126,7 @@ const tools = [
   {
     name: "Make (Integromat)",
     category: "AGT",
-    logo: "https://i.ibb.co/6wJkgFR/make-logo.png",
+    logo: "https://cdn.worldvectorlogo.com/logos/make-logo.svg",
     description: "Visual automation platform to connect apps and services.",
     businessValue: "Enables complex workflow automation with minimal coding.",
     govUseCase: "Streamlines multi-department government processes.",
@@ -144,7 +144,7 @@ const tools = [
   {
     name: "Canva",
     category: "UX",
-    logo: "https://i.ibb.co/Q9jT5Ht/canva-logo.png",
+    logo: "https://cdn.worldvectorlogo.com/logos/canva-1.svg",
     description: "Graphic design platform with AI-assisted templates.",
     businessValue: "Simplifies creation of marketing materials without design skills.",
     govUseCase: "Creates engaging public communications and educational content.",
@@ -162,7 +162,7 @@ const tools = [
   {
     name: "Lumen5",
     category: "VID",
-    logo: "https://i.ibb.co/Tmxj3N4/lumen5-logo.png",
+    logo: "https://assets.lumen5.com/images/logo.svg",
     description: "Video creation platform powered by AI to turn text into video.",
     businessValue: "Enables quick video marketing content production.",
     govUseCase: "Creates informational videos for citizen awareness campaigns.",
