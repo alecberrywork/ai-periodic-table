@@ -1,9 +1,8 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import { X } from "lucide-react";
 
 const tools = [
-  // AGT (Automation)
+  // AGT
   {
     name: "Zapier",
     category: "AGT",
@@ -31,7 +30,7 @@ const tools = [
     link: "https://www.make.com",
   },
 
-  // BIZ (Business Tools)
+  // BIZ
   {
     name: "Jasper",
     category: "BIZ",
@@ -85,7 +84,7 @@ const tools = [
     link: "https://writesonic.com",
   },
 
-  // COD (Code Assistants)
+  // COD
   {
     name: "GitHub Copilot",
     category: "COD",
@@ -113,7 +112,7 @@ const tools = [
     link: "https://tabnine.com",
   },
 
-  // IMG (Image Generators)
+  // IMG
   {
     name: "Midjourney",
     category: "IMG",
@@ -154,7 +153,7 @@ const tools = [
     link: "https://stablediffusionweb.com",
   },
 
-  // LLM (Language Models)
+  // LLM
   {
     name: "ChatGPT",
     category: "LLM",
@@ -241,7 +240,7 @@ const tools = [
     link: "https://cohere.com",
   },
 
-  // UX (Design + UX Tools)
+  // UX
   {
     name: "Figma",
     category: "UX",
@@ -283,7 +282,7 @@ const tools = [
     link: "https://www.beautiful.ai",
   },
 
-  // VID (Video Tools)
+  // VID
   {
     name: "RunwayML",
     category: "VID",
@@ -350,56 +349,65 @@ const tools = [
     reference: "https://pictory.ai/case-studies",
     link: "https://pictory.ai",
   },
+  {
+    name: "Lumen5",
+    category: "VID",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lumen5_logo.png",
+    description:
+      "AI-powered video creation platform that transforms text content into video.",
+    businessValue:
+      "Enables non-experts to create engaging videos quickly from existing content.",
+    govUseCase:
+      "Helps DWP teams create informative videos from reports and announcements to improve citizen engagement.",
+    caseStudy:
+      "Several government agencies used Lumen5 to quickly generate video updates on public health and services.",
+    reference: "https://lumen5.com/case-studies/government",
+    link: "https://lumen5.com",
+  },
 ];
 
-// Category color map for buttons
+// Category colors for tile borders/backgrounds
 const categoryColors = {
-  ALL: "bg-pink-600 text-white",
-  AGT: "bg-red-600 text-white",
-  BIZ: "bg-green-600 text-white",
-  COD: "bg-yellow-600 text-black",
-  IMG: "bg-blue-600 text-white",
-  LLM: "bg-purple-600 text-white",
-  UX: "bg-pink-500 text-white",
-  VID: "bg-teal-600 text-white",
+  All: "border-gray-400 bg-gray-100",
+  AGT: "border-yellow-500 bg-yellow-100",
+  BIZ: "border-blue-500 bg-blue-100",
+  COD: "border-green-500 bg-green-100",
+  IMG: "border-pink-500 bg-pink-100",
+  LLM: "border-purple-500 bg-purple-100",
+  UX: "border-teal-500 bg-teal-100",
+  VID: "border-red-500 bg-red-100",
 };
 
-const categories = [
-  "ALL",
-  "AGT",
-  "BIZ",
-  "COD",
-  "IMG",
-  "LLM",
-  "UX",
-  "VID",
-];
+const categories = ["All", "AGT", "BIZ", "COD", "IMG", "LLM", "UX", "VID"];
 
 export default function App() {
-  const [filterCategory, setFilterCategory] = useState("ALL");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedTool, setSelectedTool] = useState(null);
 
   const filteredTools = useMemo(() => {
-    if (filterCategory === "ALL") return tools;
-    return tools.filter((t) => t.category === filterCategory);
-  }, [filterCategory]);
+    if (selectedCategory === "All") return tools;
+    return tools.filter((tool) => tool.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-indigo-900 text-indigo-50 p-6">
-      <h1 className="text-4xl font-extrabold mb-8 text-center">
-        Interactive Periodic Table of Generative AI Tools
+    <div className="min-h-screen bg-white p-6 font-sans">
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        Generative AI Tools Periodic Table
       </h1>
 
-      {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      {/* Category Filter Buttons */}
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
-            onClick={() => setFilterCategory(cat)}
-            className={`px-5 py-2 rounded font-semibold ${
-              categoryColors[cat] ||
-              "bg-indigo-700 text-indigo-200 hover:bg-pink-600"
-            }`}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded font-semibold border-2
+              ${
+                selectedCategory === cat
+                  ? `${categoryColors[cat]} text-gray-900`
+                  : "border-gray-300 text-gray-600 hover:border-gray-500 hover:text-gray-900"
+              }
+            `}
           >
             {cat}
           </button>
@@ -410,102 +418,121 @@ export default function App() {
       <AnimateSharedLayout type="crossfade">
         <motion.div
           layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 max-w-7xl mx-auto"
         >
           {filteredTools.map((tool) => (
             <motion.div
               key={tool.name}
-              layout
-              whileHover={{ scale: 1.05 }}
+              layoutId={tool.name}
               onClick={() => setSelectedTool(tool)}
-              className="cursor-pointer bg-indigo-800 rounded-lg p-4 flex flex-col items-center shadow-lg hover:shadow-pink-600 transition-shadow duration-300"
-              title={tool.description}
+              className={`cursor-pointer rounded-lg p-4 border-4 shadow-md
+                ${categoryColors[tool.category]}
+                hover:scale-[1.05] hover:shadow-lg transition-transform duration-200
+              `}
+              title={tool.name}
+              aria-label={`View details for ${tool.name}`}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") setSelectedTool(tool);
+              }}
             >
               <img
                 src={tool.logo}
                 alt={`${tool.name} logo`}
-                className="w-20 h-20 object-contain mb-3"
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src =
-                    "https://via.placeholder.com/80?text=No+Logo";
-                }}
+                className="mx-auto mb-3 max-h-14 object-contain"
+                loading="lazy"
               />
-              <span className="font-semibold text-center text-lg">{tool.name}</span>
+              <h3 className="text-center font-semibold text-gray-900 text-lg">
+                {tool.name}
+              </h3>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Popup */}
+        {/* Modal for selected tool */}
         <AnimatePresence>
           {selectedTool && (
-            <motion.div
-              key="modal"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-5 z-50"
-              onClick={() => setSelectedTool(null)}
-            >
+            <>
+              <motion.div
+                className="fixed inset-0 bg-black bg-opacity-40 z-40"
+                onClick={() => setSelectedTool(null)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              />
               <motion.div
                 layoutId={selectedTool.name}
-                className="bg-indigo-900 rounded-lg max-w-3xl w-full p-6 relative text-indigo-50 shadow-xl"
-                onClick={(e) => e.stopPropagation()}
+                className="fixed top-1/2 left-1/2 max-w-3xl w-[90vw] max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-xl z-50 p-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
               >
                 <button
                   onClick={() => setSelectedTool(null)}
-                  className="absolute top-4 right-4 text-indigo-200 hover:text-pink-600"
-                  aria-label="Close"
+                  aria-label="Close modal"
+                  className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
                 >
-                  <X size={24} />
+                  &times;
                 </button>
-                <div className="flex items-center space-x-6 mb-5">
+                <div className="flex items-center gap-4 mb-4">
                   <img
                     src={selectedTool.logo}
                     alt={`${selectedTool.name} logo`}
-                    className="w-24 h-24 object-contain"
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src =
-                        "https://via.placeholder.com/96?text=No+Logo";
-                    }}
+                    className="h-16 w-16 object-contain"
                   />
-                  <h2 className="text-3xl font-bold">{selectedTool.name}</h2>
+                  <h2
+                    id="modal-title"
+                    className="text-2xl font-bold text-gray-900"
+                  >
+                    {selectedTool.name}
+                  </h2>
                 </div>
-
                 <p className="mb-3">
-                  <strong>Description:</strong> {selectedTool.description}
+                  <span className="font-semibold">Category:</span>{" "}
+                  {selectedTool.category}
                 </p>
                 <p className="mb-3">
-                  <strong>Business Value:</strong> {selectedTool.businessValue}
+                  <span className="font-semibold">Description:</span>{" "}
+                  {selectedTool.description}
                 </p>
                 <p className="mb-3">
-                  <strong>Government Use Case:</strong> {selectedTool.govUseCase}
+                  <span className="font-semibold">Business Value:</span>{" "}
+                  {selectedTool.businessValue}
                 </p>
                 <p className="mb-3">
-                  <strong>Case Study:</strong> {selectedTool.caseStudy}
+                  <span className="font-semibold">Government Use Case:</span>{" "}
+                  {selectedTool.govUseCase}
                 </p>
-                <p className="mb-6 break-words">
-                  <strong>Reference:</strong>{" "}
+                <p className="mb-3">
+                  <span className="font-semibold">Case Study:</span>{" "}
+                  {selectedTool.caseStudy}
+                </p>
+                <p className="mb-3">
+                  <span className="font-semibold">Reference:</span>{" "}
                   <a
                     href={selectedTool.reference}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-pink-400 hover:text-pink-600 break-all"
+                    className="text-blue-600 underline hover:text-blue-800"
                   >
                     {selectedTool.reference}
                   </a>
                 </p>
-                <a
-                  href={selectedTool.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold px-5 py-3 rounded-lg"
-                >
-                  Visit Website
-                </a>
+                <p className="mb-1">
+                  <a
+                    href={selectedTool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                  >
+                    Visit {selectedTool.name}
+                  </a>
+                </p>
               </motion.div>
-            </motion.div>
+            </>
           )}
         </AnimatePresence>
       </AnimateSharedLayout>
