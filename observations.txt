@@ -25,3 +25,9 @@ it recreates the file each time, meaning that it doesnt always persist changes. 
 I learned to then ask for snippet changes rather than wholesale ones
 
 fix one thing, break another
+
+How does the LLM maintain context when it can shift a lot between asks?
+
+each fix intorduced a break
+
+hypothesis was to do as little coding myself as possible
