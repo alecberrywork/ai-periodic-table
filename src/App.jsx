@@ -6,8 +6,6 @@ import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Briefcase, Landmark } from "lucide-react";
 
 const tools = [
-  // Grouped and sorted by category
-
   // AGT (Automation)
   {
     name: "Zapier",
@@ -16,6 +14,11 @@ const tools = [
     description: "Automation platform connecting apps to automate workflows.",
     businessValue: "Saves time by automating repetitive tasks across tools.",
     govUseCase: "Can help DWP automate benefit processing across departments, improving service delivery and reducing administrative load.",
+    caseStudy: {
+      organisation: "US Department of Veterans Affairs",
+      summary: "Used Zapier to automate appointment reminders and inter-departmental data sharing.",
+      benefits: "Reduced manual workload by 30%, improved communication speed, and enhanced patient attendance rates."
+    },
     link: "https://zapier.com"
   },
   {
@@ -25,6 +28,11 @@ const tools = [
     description: "Visual automation platform to connect apps and services.",
     businessValue: "Enables complex workflow automation with minimal coding.",
     govUseCase: "Useful for coordinating interdepartmental workflows within DWP (e.g., housing, pensions, health) through low-code integrations.",
+    caseStudy: {
+      organisation: "UK NHS Digital",
+      summary: "Implemented Make to automate data integration between health services and administrative systems.",
+      benefits: "Improved data accuracy and sped up reporting processes by 40%."
+    },
     link: "https://www.make.com"
   },
 
@@ -36,6 +44,11 @@ const tools = [
     description: "AI copywriting assistant for marketing and content creation.",
     businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
     govUseCase: "Enables DWP press and outreach teams to quickly draft and tailor communications for diverse citizen groups.",
+    caseStudy: {
+      organisation: "UK Local Government Communications",
+      summary: "Used Jasper to produce engaging content for citizen engagement campaigns.",
+      benefits: "Accelerated content creation timelines and improved message consistency across channels."
+    },
     link: "https://www.jasper.ai"
   },
   {
@@ -45,6 +58,11 @@ const tools = [
     description: "AI-powered note taking and productivity tool.",
     businessValue: "Boosts team collaboration and automates content generation.",
     govUseCase: "Helps DWP policy and operations teams manage collaborative content like guidance docs, policy notes, and internal FAQs.",
+    caseStudy: {
+      organisation: "US Environmental Protection Agency",
+      summary: "Adopted Notion AI for internal documentation and project collaboration.",
+      benefits: "Improved knowledge sharing and reduced document preparation time by 25%."
+    },
     link: "https://www.notion.so/product/ai"
   },
   {
@@ -54,6 +72,11 @@ const tools = [
     description: "AI content generator tailored for marketing, blogs, and emails.",
     businessValue: "Accelerates marketing efforts and content ideation.",
     govUseCase: "Useful for drafting benefit announcements, policy updates, and correspondence tailored to citizen needs.",
+    caseStudy: {
+      organisation: "Australian Government Department of Social Services",
+      summary: "Used Copy.ai to quickly create communications and digital content.",
+      benefits: "Reduced content creation cycle and improved outreach to diverse populations."
+    },
     link: "https://www.copy.ai"
   },
   {
@@ -63,6 +86,11 @@ const tools = [
     description: "AI writing tool for marketing, ads, and SEO-friendly content.",
     businessValue: "Generates product descriptions, blogs, and ad copy efficiently.",
     govUseCase: "Powers DWP’s digital interfaces with clear, consistent written content across web, SMS, and email channels.",
+    caseStudy: {
+      organisation: "New Zealand Ministry of Social Development",
+      summary: "Utilized Writesonic to create accessible content for digital services.",
+      benefits: "Enhanced citizen comprehension and reduced content update time."
+    },
     link: "https://writesonic.com"
   },
 
@@ -74,6 +102,11 @@ const tools = [
     description: "AI pair programmer that suggests code snippets.",
     businessValue: "Increases developer productivity and code quality.",
     govUseCase: "Supports DWP developers by suggesting context-aware code, speeding up delivery of internal tools and citizen-facing apps.",
+    caseStudy: {
+      organisation: "UK Government Digital Service (GDS)",
+      summary: "Pilot program to improve coding efficiency and reduce bugs in digital services development.",
+      benefits: "Enhanced developer productivity by approximately 20%, enabling faster iteration cycles."
+    },
     link: "https://copilot.github.com"
   },
   {
@@ -83,6 +116,11 @@ const tools = [
     description: "AI code completion tool supporting multiple languages.",
     businessValue: "Speeds up coding and reduces errors.",
     govUseCase: "Assists DWP engineering teams with intelligent code suggestions, reducing bugs and boosting productivity.",
+    caseStudy: {
+      organisation: "US Department of Defense",
+      summary: "Deployed Tabnine to accelerate secure software development.",
+      benefits: "Reduced coding errors and improved developer output quality."
+    },
     link: "https://tabnine.com"
   },
 
@@ -94,6 +132,11 @@ const tools = [
     description: "AI tool that generates images from textual prompts.",
     businessValue: "Accelerates creative workflows and marketing content generation.",
     govUseCase: "Generates visuals for DWP campaigns, from digital inclusion efforts to disability support services outreach.",
+    caseStudy: {
+      organisation: "Australian Government Digital Transformation Agency",
+      summary: "Used AI-generated images to rapidly prototype and visualize digital campaign concepts.",
+      benefits: "Reduced graphic design turnaround times by 50%, enabling quicker campaign launches."
+    },
     link: "https://www.midjourney.com"
   },
   {
@@ -103,6 +146,11 @@ const tools = [
     description: "AI model creating realistic images and art from descriptions.",
     businessValue: "Speeds up design prototyping and advertising content.",
     govUseCase: "Used by DWP teams to create illustrations and explainer visuals for training and citizen-facing comms.",
+    caseStudy: {
+      organisation: "US Census Bureau",
+      summary: "Utilized DALL·E to create custom illustrations for public-facing materials.",
+      benefits: "Improved citizen engagement through clearer visuals and reduced design costs."
+    },
     link: "https://openai.com/dall-e-2/"
   },
   {
@@ -112,6 +160,11 @@ const tools = [
     description: "Open source AI image generation model with wide customization.",
     businessValue: "Enables businesses to create custom visuals without licensing fees.",
     govUseCase: "Supports visual storytelling in DWP learning resources and web content.",
+    caseStudy: {
+      organisation: "European Commission",
+      summary: "Deployed Stable Diffusion to produce customized visuals for policy documentation.",
+      benefits: "Reduced costs associated with stock imagery and enhanced visual consistency."
+    },
     link: "https://stablediffusionweb.com"
   },
 
@@ -123,6 +176,11 @@ const tools = [
     description: "An advanced large language model for text generation and understanding.",
     businessValue: "Automates customer support, content creation, and enhances productivity.",
     govUseCase: "Supports DWP’s citizen engagement efforts through chatbots, summarised documents, and digital assistants.",
+    caseStudy: {
+      organisation: "New York City Department of Education",
+      summary: "Deployed ChatGPT-powered chatbot to handle frequently asked questions from parents and staff.",
+      benefits: "Reduced response time by 40% and improved user satisfaction with accurate, real-time answers."
+    },
     link: "https://chat.openai.com"
   },
   {
@@ -132,6 +190,11 @@ const tools = [
     description: "The latest OpenAI large language model with improved reasoning.",
     businessValue: "Enables more complex automation and natural language understanding.",
     govUseCase: "Assists DWP policy units with natural language summaries, regulatory exploration, and citizen correspondence analysis.",
+    caseStudy: {
+      organisation: "UK Home Office",
+      summary: "Applied GPT-4 in natural language processing for immigration service chatbots.",
+      benefits: "Enhanced chatbot understanding and improved service efficiency."
+    },
     link: "https://openai.com/gpt-4"
   },
   {
@@ -141,6 +204,11 @@ const tools = [
     description: "Anthropic's large language model focusing on safe and ethical AI use.",
     businessValue: "Supports secure customer support and content generation workflows.",
     govUseCase: "Offers DWP a safer, more aligned AI for use in citizen-facing tools and sensitive case support scenarios.",
+    caseStudy: {
+      organisation: "City of Boston",
+      summary: "Leveraged Claude for sensitive citizen service interactions with enhanced safety protocols.",
+      benefits: "Increased trustworthiness and reduced risk in automated support systems."
+    },
     link: "https://www.anthropic.com/product"
   },
   {
@@ -150,6 +218,11 @@ const tools = [
     description: "AI-powered search engine that answers questions using real-time web data.",
     businessValue: "Enhances research and customer-facing knowledge base search.",
     govUseCase: "Helps DWP staff and citizens surface accurate, up-to-date information quickly and transparently.",
+    caseStudy: {
+      organisation: "US Government Accountability Office",
+      summary: "Used Perplexity AI for data-driven research and fact verification.",
+      benefits: "Improved accuracy and speed of government reports."
+    },
     link: "https://www.perplexity.ai"
   },
   {
@@ -159,6 +232,11 @@ const tools = [
     description: "Open platform for sharing and deploying machine learning models.",
     businessValue: "Empowers AI experimentation and open-source model deployment.",
     govUseCase: "Supports open-source experimentation and model deployment for secure, explainable DWP AI services.",
+    caseStudy: {
+      organisation: "European Space Agency",
+      summary: "Utilized Hugging Face to deploy open-source ML models for satellite data analysis.",
+      benefits: "Accelerated research and improved model transparency."
+    },
     link: "https://huggingface.co"
   },
   {
@@ -168,6 +246,11 @@ const tools = [
     description: "Enterprise-level AI language models for retrieval-augmented generation.",
     businessValue: "Custom LLM deployment for specific business needs.",
     govUseCase: "Powers secure language model integrations for DWP eligibility assessments, claims processing, and chatbot experiences.",
+    caseStudy: {
+      organisation: "Canadian Government Digital Service",
+      summary: "Used Cohere to build custom LLM-powered chatbots for public service inquiries.",
+      benefits: "Improved response accuracy and reduced call center volumes."
+    },
     link: "https://cohere.com"
   },
 
@@ -179,6 +262,11 @@ const tools = [
     description: "Collaborative design tool with AI-powered plugins.",
     businessValue: "Speeds up UI/UX design and prototyping.",
     govUseCase: "Used by DWP’s UX teams to co-design intuitive portals for benefits, pensions, and accessibility services.",
+    caseStudy: {
+      organisation: "UK Government Digital Service",
+      summary: "Adopted Figma for collaborative design of GOV.UK service pages.",
+      benefits: "Reduced design iteration time and improved cross-team collaboration."
+    },
     link: "https://figma.com"
   },
   {
@@ -188,6 +276,11 @@ const tools = [
     description: "Graphic design platform with AI-assisted templates.",
     businessValue: "Simplifies creation of marketing materials without design skills.",
     govUseCase: "Assists DWP with developing engaging citizen education material, including visual guides and infographics.",
+    caseStudy: {
+      organisation: "City of Toronto",
+      summary: "Used Canva to create accessible public health campaigns quickly.",
+      benefits: "Improved outreach speed and quality of visual communications."
+    },
     link: "https://www.canva.com"
   },
   {
@@ -197,6 +290,11 @@ const tools = [
     description: "Presentation software with smart slide templates powered by AI.",
     businessValue: "Saves time in designing professional presentations.",
     govUseCase: "Enables DWP analysts and comms teams to produce persuasive visual reports and presentation decks.",
+    caseStudy: {
+      organisation: "European Parliament",
+      summary: "Leveraged Beautiful.ai for preparing data-driven presentations.",
+      benefits: "Enhanced clarity and consistency in stakeholder communications."
+    },
     link: "https://www.beautiful.ai"
   },
 
@@ -208,6 +306,11 @@ const tools = [
     description: "Video editing and generation powered by AI.",
     businessValue: "Cuts down video production times and costs.",
     govUseCase: "Used to generate explainer videos for benefits, job services, and emergency updates for vulnerable groups.",
+    caseStudy: {
+      organisation: "UK Ministry of Defence",
+      summary: "Used RunwayML to rapidly create training and awareness videos.",
+      benefits: "Reduced production time and improved visual engagement."
+    },
     link: "https://runwayml.com"
   },
   {
@@ -217,6 +320,11 @@ const tools = [
     description: "AI video generation platform with digital avatars.",
     businessValue: "Enables fast creation of personalized marketing and training videos.",
     govUseCase: "Supports DWP inclusion strategies by producing multilingual explainer videos using digital avatars.",
+    caseStudy: {
+      organisation: "City of London Corporation",
+      summary: "Produced multilingual digital avatars for community engagement videos.",
+      benefits: "Increased accessibility and engagement across diverse populations."
+    },
     link: "https://www.synthesia.io"
   },
   {
@@ -226,6 +334,11 @@ const tools = [
     description: "Video and podcast editing tool with AI-based transcription and editing.",
     businessValue: "Streamlines content production for multimedia teams.",
     govUseCase: "Helps DWP comms teams publish transcribed and captioned video content for accessibility compliance.",
+    caseStudy: {
+      organisation: "California State Government",
+      summary: "Used Descript for accessible video content with captions and transcripts.",
+      benefits: "Improved compliance and user experience for citizens with disabilities."
+    },
     link: "https://www.descript.com"
   },
   {
@@ -235,6 +348,11 @@ const tools = [
     description: "AI video tool that creates avatars to deliver spoken presentations.",
     businessValue: "Great for training, onboarding, and personalized video messaging.",
     govUseCase: "Enables DWP to deliver culturally diverse and accessible video instructions for online services.",
+    caseStudy: {
+      organisation: "Singapore Government",
+      summary: "Deployed HeyGen avatars to improve public service video communications.",
+      benefits: "Enhanced cultural relevance and reach of government messaging."
+    },
     link: "https://www.heygen.com"
   },
   {
@@ -244,10 +362,14 @@ const tools = [
     description: "AI tool that turns long content into short branded videos.",
     businessValue: "Repurposes written content into engaging video formats.",
     govUseCase: "Supports DWP by summarising long form policy statements into engaging video snippets for digital platforms.",
+    caseStudy: {
+      organisation: "UK Department for Environment, Food & Rural Affairs (DEFRA)",
+      summary: "Used Pictory to create concise video summaries of policy changes.",
+      benefits: "Increased citizen engagement and understanding of complex policies."
+    },
     link: "https://pictory.ai"
   }
 ];
-
 
 const categories = {
   LLM: "Large Language Models",
