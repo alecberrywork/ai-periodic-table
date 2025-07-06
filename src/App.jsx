@@ -353,72 +353,126 @@ const tools = [
   }
 ];
 
-const ToolCard = ({ tool }) => {
-  const [showCaseStudy, setShowCaseStudy] = useState(false);
-
-  return (
-    <div className="bg-white rounded-md shadow p-4 m-2 w-64 hover:shadow-lg transition-shadow">
-      <div className="flex items-center space-x-3">
-        <img src={tool.logo} alt={`${tool.name} logo`} className="w-12 h-12 object-contain" />
-        <h3 className="font-bold text-lg">{tool.name}</h3>
-      </div>
-      <p className="mt-2 text-sm">{tool.description}</p>
-      <p className="mt-1 text-xs italic text-gray-600">
-        <strong>Business value:</strong> {tool.businessValue}
-      </p>
-      <p className="mt-1 text-xs italic text-gray-600">
-        <strong>Government use:</strong> {tool.govUseCase}
-      </p>
-
-      {/* Toggle Case Study */}
-      <button
-        className="mt-3 text-sm text-blue-600 hover:underline focus:outline-none"
-        onClick={() => setShowCaseStudy(!showCaseStudy)}
-        aria-expanded={showCaseStudy}
-        aria-controls={`case-study-${tool.name.replace(/\s+/g, "-").toLowerCase()}`}
-      >
-        {showCaseStudy ? "Hide Case Study" : "Show Case Study"}
-      </button>
-
-      {/* Case Study Section */}
-      {showCaseStudy && tool.caseStudy && (
-        <div
-          id={`case-study-${tool.name.replace(/\s+/g, "-").toLowerCase()}`}
-          className="mt-2 p-3 bg-gray-50 rounded border border-gray-200 text-xs text-gray-700"
-        >
-          <p><strong>Organisation:</strong> {tool.caseStudy.organisation}</p>
-          <p><strong>Summary:</strong> {tool.caseStudy.summary}</p>
-          <p><strong>Benefits:</strong> {tool.caseStudy.benefits}</p>
-        </div>
-      )}
-
-      <a
-        href={tool.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block mt-3 text-xs text-blue-600 hover:underline"
-      >
-        Learn more
-      </a>
-    </div>
-  );
+// Category colors for styling the blocks
+const categoryColors = {
+  AGT: "bg-yellow-200 border-yellow-400",
+  BIZ: "bg-green-200 border-green-400",
+  COD: "bg-blue-200 border-blue-400",
+  IMG: "bg-pink-200 border-pink-400",
+  LLM: "bg-purple-200 border-purple-400",
+  UX:  "bg-orange-200 border-orange-400",
+  VID: "bg-red-200 border-red-400"
 };
 
-const ToolGrid = ({ tools }) => {
+const categoryNames = {
+  AGT: "Automation",
+  BIZ: "Business Tools",
+  COD: "Code Assistants",
+  IMG: "Image Generators",
+  LLM: "Language Models",
+  UX:  "Design & UX",
+  VID: "Video Tools"
+};
+
+// Group tools by category for layout
+const groupedTools = tools.reduce((acc, tool) => {
+  if (!acc[tool.category]) acc[tool.category] = [];
+  acc[tool.category].push(tool);
+  return acc;
+}, {});
+
+const ToolBlock = ({ tool, index }) => {
+  const [showCaseStudy, setShowCaseStudy] = useState(false);
+  const colorClass = categoryColors[tool.category] || "bg-gray-200 border-gray-400";
+
   return (
-    <div className="flex flex-wrap justify-center">
-      {tools.map((tool) => (
-        <ToolCard key={tool.name} tool={tool} />
-      ))}
+    <div
+      className={`border ${colorClass} rounded-sm p-3 flex flex-col justify-between cursor-pointer hover:shadow-lg transition-shadow`}
+      style={{ width: "140px", height: "180px", boxSizing: "border-box" }}
+      onClick={() => setShowCaseStudy(!showCaseStudy)}
+      title={`${tool.name} - Click to toggle details`}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => { if (e.key === "Enter") setShowCaseStudy(!showCaseStudy); }}
+      aria-expanded={showCaseStudy}
+    >
+      <div className="flex items-center space-x-2">
+        <div className="text-xs font-mono text-gray-600">{index + 1}</div>
+        <img src={tool.logo} alt={`${tool.name} logo`} className="w-8 h-8 object-contain" />
+        <h4 className="text-sm font-semibold truncate">{tool.name}</h4>
+      </div>
+
+      {!showCaseStudy && (
+        <p className="text-xs mt-1 line-clamp-3">{tool.description}</p>
+      )}
+
+      {showCaseStudy && (
+        <div className="text-xs mt-1 overflow-y-auto max-h-24">
+          <p><strong>Business value:</strong> {tool.businessValue}</p>
+          <p><strong>Government use:</strong> {tool.govUseCase}</p>
+          <p><strong>Case Study:</strong></p>
+          <p><em>{tool.caseStudy?.organisation}</em></p>
+          <p>{tool.caseStudy?.summary}</p>
+          <p><strong>Benefits:</strong> {tool.caseStudy?.benefits}</p>
+          <a
+            href={tool.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline mt-1 block"
+            onClick={e => e.stopPropagation()}
+          >
+            Learn more
+          </a>
+        </div>
+      )}
     </div>
   );
 };
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 to-white p-8">
-      <h1 className="text-3xl font-extrabold mb-6 text-center">Generative AI Tools - Government Use Case Studies</h1>
-      <ToolGrid tools={tools} />
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 to-white p-6 font-sans">
+      <h1 className="text-4xl font-extrabold mb-6 text-center select-none">
+        Generative AI Tools — Government Use & Case Studies
+      </h1>
+
+      {/* Legend for categories */}
+      <div className="flex justify-center flex-wrap gap-6 mb-8 select-none">
+        {Object.entries(categoryNames).map(([cat, name]) => (
+          <div
+            key={cat}
+            className={`flex items-center space-x-2 cursor-default`}
+          >
+            <span
+              className={`w-5 h-5 rounded-sm border ${categoryColors[cat]}`}
+              aria-hidden="true"
+            />
+            <span className="text-sm font-medium">{name}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Periodic table style grid */}
+      <div className="flex flex-col gap-8">
+        {Object.entries(groupedTools).map(([category, toolsInCat]) => (
+          <div key={category}>
+            <h2 className="text-xl font-semibold mb-2 select-none border-b border-gray-400 pb-1">
+              {categoryNames[category]} ({toolsInCat.length})
+            </h2>
+
+            <div
+              className="grid gap-3"
+              style={{
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))"
+              }}
+            >
+              {toolsInCat.map((tool, i) => (
+                <ToolBlock key={tool.name} tool={tool} index={i} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
