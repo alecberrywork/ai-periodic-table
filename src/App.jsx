@@ -9,7 +9,7 @@ const tools = [
   {
     name: "ChatGPT",
     category: "LLM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_Logo.svg",
+    logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "An advanced large language model for text generation and understanding.",
     businessValue: "Automates customer support, content creation, and enhances productivity.",
     govUseCase: "Can be used for citizen engagement chatbots and document summarization.",
@@ -18,7 +18,7 @@ const tools = [
   {
     name: "GPT-4",
     category: "LLM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_Logo.svg",
+    logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "The latest OpenAI large language model with improved reasoning.",
     businessValue: "Enables more complex automation and natural language understanding.",
     govUseCase: "Supports policy analysis, citizen feedback summarization, and complex Q&A.",
@@ -27,7 +27,7 @@ const tools = [
   {
     name: "Claude",
     category: "LLM",
-    logo: "https://pbs.twimg.com/profile_images/1599758745945406721/huGi0NvW_400x400.jpg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Anthropic_logo.svg/512px-Anthropic_logo.svg.png",
     description: "Anthropic's large language model focusing on safe and ethical AI use.",
     businessValue: "Supports secure customer support and content generation workflows.",
     govUseCase: "Assists in safely deploying AI in government services with ethical constraints.",
@@ -36,7 +36,7 @@ const tools = [
   {
     name: "Midjourney",
     category: "IMG",
-    logo: "https://cdn.worldvectorlogo.com/logos/midjourney.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Midjourney_Logo.png",
     description: "AI tool that generates images from textual prompts.",
     businessValue: "Accelerates creative workflows and marketing content generation.",
     govUseCase: "Useful for public campaign visuals and data visualization.",
@@ -45,7 +45,7 @@ const tools = [
   {
     name: "DALL·E 2",
     category: "IMG",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6e/DALL-E_logo.svg",
+    logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "AI model creating realistic images and art from descriptions.",
     businessValue: "Speeds up design prototyping and advertising content.",
     govUseCase: "Generates imagery for public information campaigns and training materials.",
@@ -54,7 +54,7 @@ const tools = [
   {
     name: "Stable Diffusion",
     category: "IMG",
-    logo: "https://stablediffusionweb.com/img/logo.svg",
+    logo: "https://avatars.githubusercontent.com/u/110520291?s=200&v=4",
     description: "Open source AI image generation model with wide customization.",
     businessValue: "Enables businesses to create custom visuals without licensing fees.",
     govUseCase: "Used for educational content and public communications.",
@@ -63,7 +63,7 @@ const tools = [
   {
     name: "RunwayML",
     category: "VID",
-    logo: "https://runwayml.com/favicon.ico",
+    logo: "https://uploads-ssl.webflow.com/64e5f6dc3346f14b092d137a/64e5f9e6da984c0e5f6f3d15_Runway%20Logo.svg",
     description: "Video editing and generation powered by AI.",
     businessValue: "Cuts down video production times and costs.",
     govUseCase: "Creates educational videos and public safety announcements.",
@@ -72,7 +72,7 @@ const tools = [
   {
     name: "Synthesia",
     category: "VID",
-    logo: "https://www.synthesia.io/favicon.ico",
+    logo: "https://assets-global.website-files.com/6220e29e6caca9a7de880b6f/6470e96271d55d9a4cf78a5c_Synthesia%20Logo%20White.svg",
     description: "AI video generation platform with digital avatars.",
     businessValue: "Enables fast creation of personalized marketing and training videos.",
     govUseCase: "Generates videos for citizen education and multilingual outreach.",
@@ -99,7 +99,7 @@ const tools = [
   {
     name: "Jasper",
     category: "BIZ",
-    logo: "https://www.jasper.ai/favicon.ico",
+    logo: "https://assets-global.website-files.com/6217d5d72036aa614c7be26b/6284c170cd075e1c737d16b2_Jasper%20logo.svg",
     description: "AI copywriting assistant for marketing and content creation.",
     businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
     govUseCase: "Supports communication teams in drafting public messages.",
@@ -117,7 +117,7 @@ const tools = [
   {
     name: "Zapier",
     category: "AGT",
-    logo: "https://zapier.com/zapier-logo.svg",
+    logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg",
     description: "Automation platform connecting apps to automate workflows.",
     businessValue: "Saves time by automating repetitive tasks across tools.",
     govUseCase: "Integrates government service platforms for smoother citizen experience.",
@@ -126,7 +126,7 @@ const tools = [
   {
     name: "Make (Integromat)",
     category: "AGT",
-    logo: "https://make.com/static/images/logo.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Make_logo_icon.svg",
     description: "Visual automation platform to connect apps and services.",
     businessValue: "Enables complex workflow automation with minimal coding.",
     govUseCase: "Streamlines multi-department government processes.",
@@ -144,7 +144,7 @@ const tools = [
   {
     name: "Canva",
     category: "UX",
-    logo: "https://seeklogo.com/images/C/canva-logo-4D1FAD3309-seeklogo.com.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg",
     description: "Graphic design platform with AI-assisted templates.",
     businessValue: "Simplifies creation of marketing materials without design skills.",
     govUseCase: "Creates engaging public communications and educational content.",
@@ -153,7 +153,7 @@ const tools = [
   {
     name: "AIVA",
     category: "AUD",
-    logo: "https://aiva.ai/static/aiva_logo.svg",
+    logo: "https://avatars.githubusercontent.com/u/26690300?s=200&v=4",
     description: "AI composer that creates music and soundtracks.",
     businessValue: "Generates custom music for marketing and branding.",
     govUseCase: "Creates audio content for public service announcements and accessibility.",
@@ -162,7 +162,7 @@ const tools = [
   {
     name: "Lumen5",
     category: "VID",
-    logo: "https://lumen5.com/static/images/lumen5-logo.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Lumen5_logo.svg",
     description: "Video creation platform powered by AI to turn text into video.",
     businessValue: "Enables quick video marketing content production.",
     govUseCase: "Creates informational videos for citizen awareness campaigns.",
