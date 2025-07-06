@@ -467,6 +467,12 @@ export default function App() {
               >
                 <motion.div
                   className="bg-white rounded-xl shadow-xl p-6 max-w-3xl w-[90vw] max-h-[90vh] overflow-y-auto relative"
+                  onClick={e => e.stopPropagation()}
+                  initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  style={{ originX: 0.5, originY: 0.5 }}
                   initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
                   animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                   exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
