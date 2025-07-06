@@ -32,6 +32,52 @@ const tools = [
   { name: "HeyGen", category: "VID", logo: "https://img.icons8.com/fluent/512/heygen.png", description: "AI video tool that creates avatars to deliver spoken presentations.", businessValue: "Great for training, onboarding, and personalized video messaging.", govUseCase: "Enables DWP to deliver culturally diverse and accessible video instructions for online services.", caseStudy: "A government training department used HeyGen avatars to create personalized onboarding videos.", reference: "https://heygen.com/case-studies", link: "https://heygen.com" },
   { name: "Pictory", category: "VID", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODNZnjD2-sfERyLlnbpCNECbFnt8DB6G61g&s", description: "AI tool that turns long content into short branded videos.", businessValue: "Repurposes written content into engaging video formats.", govUseCase: "Supports DWP by summarising long form policy statements into engaging video snippets for digital platforms.", caseStudy: "A UK local government used Pictory to convert lengthy policy documents into digestible video summaries.", reference: "https://pictory.ai/case-studies", link: "https://pictory.ai" },
   { name: "Lumen5", category: "VID", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfe1BzLmUnDfhaNzQ484EZzoLpRTL6jSIWFQ&s", description: "AI-powered video creation platform that transforms text content into video.", businessValue: "Enables non-experts to create engaging videos quickly from existing content.", govUseCase: "Helps DWP teams create informative videos from reports and announcements to improve citizen engagement.", caseStudy: "Several government agencies used Lumen5 to quickly generate video updates on public health and services.", reference: "https://lumen5.com/case-studies/government", link: "https://lumen5.com" },
+  { name: "Microsoft Copilot",  category: "COD", logo: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoft.svg", description: "AI‐powered code assistant built into Microsoft 365 and GitHub environments.", businessValue: "Boosts developer and office‐worker productivity by suggesting context‐aware code and document edits.", govUseCase: "Helps DWP developers write, refactor, and test code faster, and enables policy teams to draft guidance with smart suggestions.", caseStudy: "A UK government digital team used Microsoft Copilot to accelerate prototype delivery by 30%, reducing manual coding and review cycles.", reference: "https://aka.ms/copilot-casestudy", link: "https://aka.ms/copilot"},
+ {
+  name: "QuerySum",
+  category: "LLM",
+  logo: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/queried.svg",
+  description: "AI tool that ingests data sources and produces succinct, natural‐language summaries.",
+  businessValue: "Turns complex reports and datasets into actionable executive summaries in seconds.",
+  govUseCase: "Enables DWP analysts to summarize large benefit‐claim datasets or policy whitepapers instantly for leadership briefings.",
+  caseStudy: "The Scottish Government piloted QuerySum to condense quarterly performance data, cutting prep time from days to hours.",
+  reference: "https://querysum.ai/case-studies",
+  link: "https://querysum.ai"
+},
+{
+  name: "AutoTestGen",
+  category: "COD",
+  logo: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/autotestgen.svg",
+  description: "Generates unit and integration tests automatically from your codebase.",
+  businessValue: "Increases test coverage without manual effort, catches regressions early.",
+  govUseCase: "Helps DWP’s engineering teams maintain high test coverage on citizen‐facing web apps, reducing production bugs.",
+  caseStudy: "A government IT department used AutoTestGen to boost test coverage from 45% to 85% in two weeks.",
+  reference: "https://autotestgen.com/government-cases",
+  link: "https://autotestgen.com"
+},
+{
+  name: "WP Drafter",
+  category: "BIZ",
+  logo: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wordpress.svg",
+  description: "AI plugin for WordPress that drafts and optimizes blog posts and pages.",
+  businessValue: "Speeds up content creation and SEO optimization for marketing teams.",
+  govUseCase: "Allows DWP communications teams to draft and publish news updates or guidance pages on gov.uk sites more quickly.",
+  caseStudy: "A UK local authority used WP Drafter to generate and publish community news posts twice as fast as before.",
+  reference: "https://wpdrafter.ai/case-studies",
+  link: "https://wpdrafter.ai"
+},
+{
+  name: "Data Mocker",
+  category: "COD",
+  logo: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/datadotai.svg",
+  description: "Creates realistic synthetic datasets for testing and development.",
+  businessValue: "Enables safe, GDPR‑compliant test data generation, accelerating dev cycles.",
+  govUseCase: "Helps DWP teams generate anonymized benefit‐claim data for offline testing without exposing real PII.",
+  caseStudy: "A UK public sector project used Data Mocker to simulate 100,000 claim records, reducing QA bottlenecks by 50%.",
+  reference: "https://datamocker.io/case-studies",
+  link: "https://datamocker.io"
+},
+
 ];
 
 
