@@ -1,3 +1,6 @@
+// Interactive Periodic Table of Generative AI Tools with Business and Government Value
+// Built with React + Tailwind CSS
+
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
@@ -366,7 +369,7 @@ const tools = [
   },
 ];
 
-// Category colors for tile borders/backgrounds
+// Category color map
 const categoryColors = {
   All: "border-gray-400 bg-gray-100",
   AGT: "border-yellow-500 bg-yellow-100",
@@ -386,7 +389,7 @@ export default function App() {
 
   const filteredTools = useMemo(() => {
     if (selectedCategory === "All") return tools;
-    return tools.filter((tool) => tool.category === selectedCategory);
+    return tools.filter(tool => tool.category === selectedCategory);
   }, [selectedCategory]);
 
   return (
@@ -395,52 +398,45 @@ export default function App() {
         Generative AI Tools Periodic Table
       </h1>
 
-      {/* Category Filter Buttons */}
+      {/* Category Filters */}
       <div className="flex flex-wrap justify-center gap-3 mb-6">
-        {categories.map((cat) => (
+        {categories.map(cat => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded font-semibold border-2
-              ${
-                selectedCategory === cat
-                  ? `${categoryColors[cat]} text-gray-900`
-                  : "border-gray-300 text-gray-600 hover:border-gray-500 hover:text-gray-900"
-              }
-            `}
+            className={`px-4 py-2 rounded font-semibold border-2 ${
+              selectedCategory === cat
+                ? `${categoryColors[cat]} text-gray-900`
+                : "border-gray-300 text-gray-600 hover:border-gray-500 hover:text-gray-900"
+            }`}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      {/* Tools Grid */}
       <AnimateSharedLayout type="crossfade">
+        {/* Grid of Tool Tiles */}
         <motion.div
           layout
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 max-w-7xl mx-auto"
         >
-          {filteredTools.map((tool) => (
+          {filteredTools.map(tool => (
             <motion.div
               key={tool.name}
               layoutId={tool.name}
               onClick={() => setSelectedTool(tool)}
-              className={`cursor-pointer rounded-lg p-4 border-4 shadow-md
-                ${categoryColors[tool.category]}
-                hover:scale-[1.05] hover:shadow-lg transition-transform duration-200
-              `}
+              className={`cursor-pointer rounded-lg p-4 border-4 shadow-md hover:scale-[1.05] hover:shadow-lg transition-transform duration-200 ${categoryColors[tool.category]}`}
               title={tool.name}
-              aria-label={`View details for ${tool.name}`}
               tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") setSelectedTool(tool);
-              }}
+              onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setSelectedTool(tool)}
             >
               <img
                 src={tool.logo}
                 alt={`${tool.name} logo`}
                 className="mx-auto mb-3 max-h-14 object-contain"
                 loading="lazy"
+                onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://via.placeholder.com/80?text=No+Logo'; }}
               />
               <h3 className="text-center font-semibold text-gray-900 text-lg">
                 {tool.name}
@@ -449,10 +445,11 @@ export default function App() {
           ))}
         </motion.div>
 
-      {/* Modal Popup */}
+        {/* Modal Popup */}
         <AnimatePresence>
           {selectedTool && (
             <>
+              {/* Overlay - outside click closes */}
               <motion.div
                 className="fixed inset-0 bg-black bg-opacity-40 z-40"
                 onClick={() => setSelectedTool(null)}
@@ -460,26 +457,39 @@ export default function App() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               />
+
+              {/* Centered Modal */}
               <motion.div
                 layoutId={selectedTool.name}
                 className="fixed inset-0 flex items-center justify-center z-50 p-6"
-                onClick={e => e.stopPropagation()}
               >
                 <motion.div
                   className="bg-white rounded-xl shadow-xl p-6 max-w-3xl w-[90vw] max-h-[90vh] overflow-y-auto relative"
-                  onClick={e => e.stopPropagation()}
-                  initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
-                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                  onClick={e => e.stopPropagation()} // prevent closing when clicking inside
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{ originX: 0.5, originY: 0.5 }}
-                  initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
-                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{ originX: 0.5, originY: 0.5 }}
                 >
-                  {/* existing modal content */}
+                  <button
+                    onClick={() => setSelectedTool(null)}
+                    aria-label="Close modal"
+                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+                  >
+                    &times;
+                  </button>
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={selectedTool.logo}
+                      alt={`${selectedTool.name} logo`}
+                      className="h-16 w-16 object-contain"
+                    />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      {selectedTool.name}
+                    </h2>
+                  </div>
+
                   <p className="mb-3"><strong>Category:</strong> {selectedTool.category}</p>
                   <p className="mb-3"><strong>Description:</strong> {selectedTool.description}</p>
                   <p className="mb-3"><strong>Business Value:</strong> {selectedTool.businessValue}</p>
