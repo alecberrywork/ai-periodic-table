@@ -11,11 +11,6 @@ const categoryColors = {
   VID: "bg-red-200 border-red-400",
 };
 
-// Interactive Periodic Table of Generative AI Tools with Business, Government Use, Case Studies & References
-// Built with React + Tailwind CSS
-
-import { useState } from "react";
-
 const categoryNames = {
   AGT: "Automation",
   BIZ: "Business Tools",
