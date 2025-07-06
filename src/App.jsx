@@ -479,6 +479,45 @@ const tools = [
     },
     link: "https://pictory.ai",
   },
+   {
+    name: "Claude",
+    category: "LLM",
+    logo: "https://logosandtypes.com/wp-content/uploads/2022/06/anthropic.svg",
+    description:
+      "Anthropic's large language model focusing on safe and ethical AI use.",
+    businessValue:
+      "Supports secure customer support and content generation workflows.",
+    govUseCase:
+      "Offers DWP a safer, more aligned AI for use in citizen-facing tools and sensitive case support scenarios.",
+    caseStudy: {
+      organisation: "Anthropic (Pilot with US Government)",
+      summary:
+        "Used Claude's safe AI assistant in government contexts to assist with sensitive data handling.",
+      benefits:
+        "Improved safety and compliance while enabling AI-driven assistance.",
+    },
+    link: "https://www.anthropic.com/product",
+  },
+  {
+    name: "Tabnine",
+    category: "COD",
+    logo: "https://www.tabnine.com/images/logo.png",
+    description:
+      "AI code completion tool supporting multiple languages.",
+    businessValue:
+      "Speeds up coding and reduces errors.",
+    govUseCase:
+      "Assists DWP engineering teams with intelligent code suggestions, reducing bugs and boosting productivity.",
+    caseStudy: {
+      organisation: "Microsoft",
+      summary:
+        "Integrated Tabnine to enhance developer productivity in large software projects.",
+      benefits:
+        "Reduced development time and improved code quality across teams.",
+    },
+    link: "https://tabnine.com",
+  },
+
 ];
 
 function Modal({ tool, onClose }) {
