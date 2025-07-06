@@ -15,7 +15,7 @@ const tools = [
     logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg",
     description: "Automation platform connecting apps to automate workflows.",
     businessValue: "Saves time by automating repetitive tasks across tools.",
-    govUseCase: "Integrates government service platforms for smoother citizen experience.",
+    govUseCase: "Can help DWP automate benefit processing across departments, improving service delivery and reducing administrative load.",
     link: "https://zapier.com"
   },
   {
@@ -24,7 +24,7 @@ const tools = [
     logo: "https://cdn.worldvectorlogo.com/logos/make-logo.svg",
     description: "Visual automation platform to connect apps and services.",
     businessValue: "Enables complex workflow automation with minimal coding.",
-    govUseCase: "Streamlines multi-department government processes.",
+    govUseCase: "Useful for coordinating interdepartmental workflows within DWP (e.g., housing, pensions, health) through low-code integrations.",
     link: "https://www.make.com"
   },
 
@@ -35,7 +35,7 @@ const tools = [
     logo: "https://www.jasper.ai/images/brand/jasper-logo-full-color.svg",
     description: "AI copywriting assistant for marketing and content creation.",
     businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
-    govUseCase: "Supports communication teams in drafting public messages.",
+    govUseCase: "Enables DWP press and outreach teams to quickly draft and tailor communications for diverse citizen groups.",
     link: "https://www.jasper.ai"
   },
   {
@@ -44,7 +44,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg",
     description: "AI-powered note taking and productivity tool.",
     businessValue: "Boosts team collaboration and automates content generation.",
-    govUseCase: "Improves documentation and knowledge sharing across government.",
+    govUseCase: "Helps DWP policy and operations teams manage collaborative content like guidance docs, policy notes, and internal FAQs.",
     link: "https://www.notion.so/product/ai"
   },
   {
@@ -53,7 +53,7 @@ const tools = [
     logo: "https://www.copy.ai/favicon.ico",
     description: "AI content generator tailored for marketing, blogs, and emails.",
     businessValue: "Accelerates marketing efforts and content ideation.",
-    govUseCase: "Aids in drafting announcements and informative content.",
+    govUseCase: "Useful for drafting benefit announcements, policy updates, and correspondence tailored to citizen needs.",
     link: "https://www.copy.ai"
   },
   {
@@ -62,7 +62,7 @@ const tools = [
     logo: "https://writesonic.com/_next/static/media/favicon.0f7908f4.ico",
     description: "AI writing tool for marketing, ads, and SEO-friendly content.",
     businessValue: "Generates product descriptions, blogs, and ad copy efficiently.",
-    govUseCase: "Supports digital services with consistent content generation.",
+    govUseCase: "Powers DWP’s digital interfaces with clear, consistent written content across web, SMS, and email channels.",
     link: "https://writesonic.com"
   },
 
@@ -73,7 +73,7 @@ const tools = [
     logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
     description: "AI pair programmer that suggests code snippets.",
     businessValue: "Increases developer productivity and code quality.",
-    govUseCase: "Helps build efficient public sector software faster.",
+    govUseCase: "Supports DWP developers by suggesting context-aware code, speeding up delivery of internal tools and citizen-facing apps.",
     link: "https://copilot.github.com"
   },
   {
@@ -82,7 +82,7 @@ const tools = [
     logo: "https://www.tabnine.com/images/logo.png",
     description: "AI code completion tool supporting multiple languages.",
     businessValue: "Speeds up coding and reduces errors.",
-    govUseCase: "Improves developer efficiency in government IT projects.",
+    govUseCase: "Assists DWP engineering teams with intelligent code suggestions, reducing bugs and boosting productivity.",
     link: "https://tabnine.com"
   },
 
@@ -93,7 +93,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Midjourney_Emblem.png",
     description: "AI tool that generates images from textual prompts.",
     businessValue: "Accelerates creative workflows and marketing content generation.",
-    govUseCase: "Useful for public campaign visuals and data visualization.",
+    govUseCase: "Generates visuals for DWP campaigns, from digital inclusion efforts to disability support services outreach.",
     link: "https://www.midjourney.com"
   },
   {
@@ -102,7 +102,7 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "AI model creating realistic images and art from descriptions.",
     businessValue: "Speeds up design prototyping and advertising content.",
-    govUseCase: "Generates imagery for public information campaigns and training materials.",
+    govUseCase: "Used by DWP teams to create illustrations and explainer visuals for training and citizen-facing comms.",
     link: "https://openai.com/dall-e-2/"
   },
   {
@@ -111,7 +111,7 @@ const tools = [
     logo: "https://avatars.githubusercontent.com/u/110520291?s=200&v=4",
     description: "Open source AI image generation model with wide customization.",
     businessValue: "Enables businesses to create custom visuals without licensing fees.",
-    govUseCase: "Used for educational content and public communications.",
+    govUseCase: "Supports visual storytelling in DWP learning resources and web content.",
     link: "https://stablediffusionweb.com"
   },
 
@@ -122,7 +122,7 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "An advanced large language model for text generation and understanding.",
     businessValue: "Automates customer support, content creation, and enhances productivity.",
-    govUseCase: "Can be used for citizen engagement chatbots and document summarization.",
+    govUseCase: "Supports DWP’s citizen engagement efforts through chatbots, summarised documents, and digital assistants.",
     link: "https://chat.openai.com"
   },
   {
@@ -131,7 +131,7 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
     description: "The latest OpenAI large language model with improved reasoning.",
     businessValue: "Enables more complex automation and natural language understanding.",
-    govUseCase: "Supports policy analysis, citizen feedback summarization, and complex Q&A.",
+    govUseCase: "Assists DWP policy units with natural language summaries, regulatory exploration, and citizen correspondence analysis.",
     link: "https://openai.com/gpt-4"
   },
   {
@@ -140,7 +140,7 @@ const tools = [
     logo: "https://logosandtypes.com/wp-content/uploads/2022/06/anthropic.svg",
     description: "Anthropic's large language model focusing on safe and ethical AI use.",
     businessValue: "Supports secure customer support and content generation workflows.",
-    govUseCase: "Assists in safely deploying AI in government services with ethical constraints.",
+    govUseCase: "Offers DWP a safer, more aligned AI for use in citizen-facing tools and sensitive case support scenarios.",
     link: "https://www.anthropic.com/product"
   },
   {
@@ -149,7 +149,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Perplexity_AI_Logo.png",
     description: "AI-powered search engine that answers questions using real-time web data.",
     businessValue: "Enhances research and customer-facing knowledge base search.",
-    govUseCase: "Improves access to verified information for citizens and public servants.",
+    govUseCase: "Helps DWP staff and citizens surface accurate, up-to-date information quickly and transparently.",
     link: "https://www.perplexity.ai"
   },
   {
@@ -158,7 +158,7 @@ const tools = [
     logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
     description: "Open platform for sharing and deploying machine learning models.",
     businessValue: "Empowers AI experimentation and open-source model deployment.",
-    govUseCase: "Facilitates transparent, adaptable AI tools for public services.",
+    govUseCase: "Supports open-source experimentation and model deployment for secure, explainable DWP AI services.",
     link: "https://huggingface.co"
   },
   {
@@ -167,7 +167,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cohere_logo.svg",
     description: "Enterprise-level AI language models for retrieval-augmented generation.",
     businessValue: "Custom LLM deployment for specific business needs.",
-    govUseCase: "Deploys secure, task-specific language models for sensitive public applications.",
+    govUseCase: "Powers secure language model integrations for DWP eligibility assessments, claims processing, and chatbot experiences.",
     link: "https://cohere.com"
   },
 
@@ -178,7 +178,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
     description: "Collaborative design tool with AI-powered plugins.",
     businessValue: "Speeds up UI/UX design and prototyping.",
-    govUseCase: "Designs user-friendly government portals and apps.",
+    govUseCase: "Used by DWP’s UX teams to co-design intuitive portals for benefits, pensions, and accessibility services.",
     link: "https://figma.com"
   },
   {
@@ -187,7 +187,7 @@ const tools = [
     logo: "https://cdn.worldvectorlogo.com/logos/canva-1.svg",
     description: "Graphic design platform with AI-assisted templates.",
     businessValue: "Simplifies creation of marketing materials without design skills.",
-    govUseCase: "Creates engaging public communications and educational content.",
+    govUseCase: "Assists DWP with developing engaging citizen education material, including visual guides and infographics.",
     link: "https://www.canva.com"
   },
   {
@@ -196,7 +196,7 @@ const tools = [
     logo: "https://www.beautiful.ai/assets/icons/icon-beautifulai.svg",
     description: "Presentation software with smart slide templates powered by AI.",
     businessValue: "Saves time in designing professional presentations.",
-    govUseCase: "Creates impactful visuals for public communication or internal use.",
+    govUseCase: "Enables DWP analysts and comms teams to produce persuasive visual reports and presentation decks.",
     link: "https://www.beautiful.ai"
   },
 
@@ -207,7 +207,7 @@ const tools = [
     logo: "https://uploads-ssl.webflow.com/646b86b7d1e7aa5fef24cf3b/6477c74014b6e5ce2a35cf7a_logo.png",
     description: "Video editing and generation powered by AI.",
     businessValue: "Cuts down video production times and costs.",
-    govUseCase: "Creates educational videos and public safety announcements.",
+    govUseCase: "Used to generate explainer videos for benefits, job services, and emergency updates for vulnerable groups.",
     link: "https://runwayml.com"
   },
   {
@@ -216,7 +216,7 @@ const tools = [
     logo: "https://uploads-ssl.webflow.com/6372f3a6f2b83f3efbcbfc14/63f5b2b3fbe09b59c674116b_synthesia.png",
     description: "AI video generation platform with digital avatars.",
     businessValue: "Enables fast creation of personalized marketing and training videos.",
-    govUseCase: "Generates videos for citizen education and multilingual outreach.",
+    govUseCase: "Supports DWP inclusion strategies by producing multilingual explainer videos using digital avatars.",
     link: "https://www.synthesia.io"
   },
   {
@@ -225,7 +225,7 @@ const tools = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/10/Descript_logo.svg",
     description: "Video and podcast editing tool with AI-based transcription and editing.",
     businessValue: "Streamlines content production for multimedia teams.",
-    govUseCase: "Enables production of accessible and inclusive government media.",
+    govUseCase: "Helps DWP comms teams publish transcribed and captioned video content for accessibility compliance.",
     link: "https://www.descript.com"
   },
   {
@@ -234,7 +234,7 @@ const tools = [
     logo: "https://heygen.com/static/media/logo.812126b577f23e3324a1.png",
     description: "AI video tool that creates avatars to deliver spoken presentations.",
     businessValue: "Great for training, onboarding, and personalized video messaging.",
-    govUseCase: "Creates accessible video guidance for public users in multiple languages.",
+    govUseCase: "Enables DWP to deliver culturally diverse and accessible video instructions for online services.",
     link: "https://www.heygen.com"
   },
   {
@@ -243,10 +243,11 @@ const tools = [
     logo: "https://pictory.ai/wp-content/uploads/2021/03/cropped-Pictory-logo.png",
     description: "AI tool that turns long content into short branded videos.",
     businessValue: "Repurposes written content into engaging video formats.",
-    govUseCase: "Creates video highlights of public announcements or policy changes.",
+    govUseCase: "Supports DWP by summarising long form policy statements into engaging video snippets for digital platforms.",
     link: "https://pictory.ai"
   }
 ];
+
 
 const categories = {
   LLM: "Large Language Models",
