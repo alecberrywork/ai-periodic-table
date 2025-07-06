@@ -6,6 +6,116 @@ import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Briefcase, Landmark } from "lucide-react";
 
 const tools = [
+  // Grouped and sorted by category
+
+  // AGT (Automation)
+  {
+    name: "Zapier",
+    category: "AGT",
+    logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg",
+    description: "Automation platform connecting apps to automate workflows.",
+    businessValue: "Saves time by automating repetitive tasks across tools.",
+    govUseCase: "Integrates government service platforms for smoother citizen experience.",
+    link: "https://zapier.com"
+  },
+  {
+    name: "Make (Integromat)",
+    category: "AGT",
+    logo: "https://cdn.worldvectorlogo.com/logos/make-logo.svg",
+    description: "Visual automation platform to connect apps and services.",
+    businessValue: "Enables complex workflow automation with minimal coding.",
+    govUseCase: "Streamlines multi-department government processes.",
+    link: "https://www.make.com"
+  },
+
+  // BIZ (Business Tools)
+  {
+    name: "Jasper",
+    category: "BIZ",
+    logo: "https://www.jasper.ai/images/brand/jasper-logo-full-color.svg",
+    description: "AI copywriting assistant for marketing and content creation.",
+    businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
+    govUseCase: "Supports communication teams in drafting public messages.",
+    link: "https://www.jasper.ai"
+  },
+  {
+    name: "Notion AI",
+    category: "BIZ",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg",
+    description: "AI-powered note taking and productivity tool.",
+    businessValue: "Boosts team collaboration and automates content generation.",
+    govUseCase: "Improves documentation and knowledge sharing across government.",
+    link: "https://www.notion.so/product/ai"
+  },
+  {
+    name: "Copy.ai",
+    category: "BIZ",
+    logo: "https://www.copy.ai/favicon.ico",
+    description: "AI content generator tailored for marketing, blogs, and emails.",
+    businessValue: "Accelerates marketing efforts and content ideation.",
+    govUseCase: "Aids in drafting announcements and informative content.",
+    link: "https://www.copy.ai"
+  },
+  {
+    name: "Writesonic",
+    category: "BIZ",
+    logo: "https://writesonic.com/_next/static/media/favicon.0f7908f4.ico",
+    description: "AI writing tool for marketing, ads, and SEO-friendly content.",
+    businessValue: "Generates product descriptions, blogs, and ad copy efficiently.",
+    govUseCase: "Supports digital services with consistent content generation.",
+    link: "https://writesonic.com"
+  },
+
+  // COD (Code Assistants)
+  {
+    name: "GitHub Copilot",
+    category: "COD",
+    logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    description: "AI pair programmer that suggests code snippets.",
+    businessValue: "Increases developer productivity and code quality.",
+    govUseCase: "Helps build efficient public sector software faster.",
+    link: "https://copilot.github.com"
+  },
+  {
+    name: "Tabnine",
+    category: "COD",
+    logo: "https://www.tabnine.com/images/logo.png",
+    description: "AI code completion tool supporting multiple languages.",
+    businessValue: "Speeds up coding and reduces errors.",
+    govUseCase: "Improves developer efficiency in government IT projects.",
+    link: "https://tabnine.com"
+  },
+
+  // IMG (Image Generators)
+  {
+    name: "Midjourney",
+    category: "IMG",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Midjourney_Emblem.png",
+    description: "AI tool that generates images from textual prompts.",
+    businessValue: "Accelerates creative workflows and marketing content generation.",
+    govUseCase: "Useful for public campaign visuals and data visualization.",
+    link: "https://www.midjourney.com"
+  },
+  {
+    name: "DALL·E 2",
+    category: "IMG",
+    logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
+    description: "AI model creating realistic images and art from descriptions.",
+    businessValue: "Speeds up design prototyping and advertising content.",
+    govUseCase: "Generates imagery for public information campaigns and training materials.",
+    link: "https://openai.com/dall-e-2/"
+  },
+  {
+    name: "Stable Diffusion",
+    category: "IMG",
+    logo: "https://avatars.githubusercontent.com/u/110520291?s=200&v=4",
+    description: "Open source AI image generation model with wide customization.",
+    businessValue: "Enables businesses to create custom visuals without licensing fees.",
+    govUseCase: "Used for educational content and public communications.",
+    link: "https://stablediffusionweb.com"
+  },
+
+  // LLM (Language Models)
   {
     name: "ChatGPT",
     category: "LLM",
@@ -34,104 +144,34 @@ const tools = [
     link: "https://www.anthropic.com/product"
   },
   {
-    name: "Midjourney",
-    category: "IMG",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Midjourney_Emblem.png",
-    description: "AI tool that generates images from textual prompts.",
-    businessValue: "Accelerates creative workflows and marketing content generation.",
-    govUseCase: "Useful for public campaign visuals and data visualization.",
-    link: "https://www.midjourney.com"
+    name: "Perplexity AI",
+    category: "LLM",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Perplexity_AI_Logo.png",
+    description: "AI-powered search engine that answers questions using real-time web data.",
+    businessValue: "Enhances research and customer-facing knowledge base search.",
+    govUseCase: "Improves access to verified information for citizens and public servants.",
+    link: "https://www.perplexity.ai"
   },
   {
-    name: "DALL·E 2",
-    category: "IMG",
-    logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg",
-    description: "AI model creating realistic images and art from descriptions.",
-    businessValue: "Speeds up design prototyping and advertising content.",
-    govUseCase: "Generates imagery for public information campaigns and training materials.",
-    link: "https://openai.com/dall-e-2/"
+    name: "Hugging Face",
+    category: "LLM",
+    logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    description: "Open platform for sharing and deploying machine learning models.",
+    businessValue: "Empowers AI experimentation and open-source model deployment.",
+    govUseCase: "Facilitates transparent, adaptable AI tools for public services.",
+    link: "https://huggingface.co"
   },
   {
-    name: "Stable Diffusion",
-    category: "IMG",
-    logo: "https://avatars.githubusercontent.com/u/110520291?s=200&v=4",
-    description: "Open source AI image generation model with wide customization.",
-    businessValue: "Enables businesses to create custom visuals without licensing fees.",
-    govUseCase: "Used for educational content and public communications.",
-    link: "https://stablediffusionweb.com"
+    name: "Cohere",
+    category: "LLM",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cohere_logo.svg",
+    description: "Enterprise-level AI language models for retrieval-augmented generation.",
+    businessValue: "Custom LLM deployment for specific business needs.",
+    govUseCase: "Deploys secure, task-specific language models for sensitive public applications.",
+    link: "https://cohere.com"
   },
-  {
-    name: "RunwayML",
-    category: "VID",
-    logo: "https://uploads-ssl.webflow.com/646b86b7d1e7aa5fef24cf3b/6477c74014b6e5ce2a35cf7a_logo.png",
-    description: "Video editing and generation powered by AI.",
-    businessValue: "Cuts down video production times and costs.",
-    govUseCase: "Creates educational videos and public safety announcements.",
-    link: "https://runwayml.com"
-  },
-  {
-    name: "Synthesia",
-    category: "VID",
-    logo: "https://uploads-ssl.webflow.com/6372f3a6f2b83f3efbcbfc14/63f5b2b3fbe09b59c674116b_synthesia.png",
-    description: "AI video generation platform with digital avatars.",
-    businessValue: "Enables fast creation of personalized marketing and training videos.",
-    govUseCase: "Generates videos for citizen education and multilingual outreach.",
-    link: "https://www.synthesia.io"
-  },
-  {
-    name: "GitHub Copilot",
-    category: "COD",
-    logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-    description: "AI pair programmer that suggests code snippets.",
-    businessValue: "Increases developer productivity and code quality.",
-    govUseCase: "Helps build efficient public sector software faster.",
-    link: "https://copilot.github.com"
-  },
-  {
-    name: "Tabnine",
-    category: "COD",
-    logo: "https://www.tabnine.com/images/logo.png",
-    description: "AI code completion tool supporting multiple languages.",
-    businessValue: "Speeds up coding and reduces errors.",
-    govUseCase: "Improves developer efficiency in government IT projects.",
-    link: "https://tabnine.com"
-  },
-  {
-    name: "Jasper",
-    category: "BIZ",
-    logo: "https://www.jasper.ai/images/brand/jasper-logo-full-color.svg",
-    description: "AI copywriting assistant for marketing and content creation.",
-    businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
-    govUseCase: "Supports communication teams in drafting public messages.",
-    link: "https://www.jasper.ai"
-  },
-  {
-    name: "Notion AI",
-    category: "BIZ",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg",
-    description: "AI-powered note taking and productivity tool.",
-    businessValue: "Boosts team collaboration and automates content generation.",
-    govUseCase: "Improves documentation and knowledge sharing across government.",
-    link: "https://www.notion.so/product/ai"
-  },
-  {
-    name: "Zapier",
-    category: "AGT",
-    logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg",
-    description: "Automation platform connecting apps to automate workflows.",
-    businessValue: "Saves time by automating repetitive tasks across tools.",
-    govUseCase: "Integrates government service platforms for smoother citizen experience.",
-    link: "https://zapier.com"
-  },
-  {
-    name: "Make (Integromat)",
-    category: "AGT",
-    logo: "https://cdn.worldvectorlogo.com/logos/make-logo.svg",
-    description: "Visual automation platform to connect apps and services.",
-    businessValue: "Enables complex workflow automation with minimal coding.",
-    govUseCase: "Streamlines multi-department government processes.",
-    link: "https://www.make.com"
-  },
+
+  // UX (Design + UX Tools)
   {
     name: "Figma",
     category: "UX",
@@ -151,40 +191,33 @@ const tools = [
     link: "https://www.canva.com"
   },
   {
-    name: "AIVA",
-    category: "AUD",
-    logo: "https://avatars.githubusercontent.com/u/26690300?s=200&v=4",
-    description: "AI composer that creates music and soundtracks.",
-    businessValue: "Generates custom music for marketing and branding.",
-    govUseCase: "Creates audio content for public service announcements and accessibility.",
-    link: "https://aiva.ai"
+    name: "Beautiful.ai",
+    category: "UX",
+    logo: "https://www.beautiful.ai/assets/icons/icon-beautifulai.svg",
+    description: "Presentation software with smart slide templates powered by AI.",
+    businessValue: "Saves time in designing professional presentations.",
+    govUseCase: "Creates impactful visuals for public communication or internal use.",
+    link: "https://www.beautiful.ai"
   },
+
+  // VID (Video Tools)
   {
-    name: "Lumen5",
+    name: "RunwayML",
     category: "VID",
-    logo: "https://assets.lumen5.com/images/logo.svg",
-    description: "Video creation platform powered by AI to turn text into video.",
-    businessValue: "Enables quick video marketing content production.",
-    govUseCase: "Creates informational videos for citizen awareness campaigns.",
-    link: "https://lumen5.com"
+    logo: "https://uploads-ssl.webflow.com/646b86b7d1e7aa5fef24cf3b/6477c74014b6e5ce2a35cf7a_logo.png",
+    description: "Video editing and generation powered by AI.",
+    businessValue: "Cuts down video production times and costs.",
+    govUseCase: "Creates educational videos and public safety announcements.",
+    link: "https://runwayml.com"
   },
   {
-    name: "Perplexity AI",
-    category: "LLM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Perplexity_AI_Logo.png",
-    description: "AI-powered search engine that answers questions using real-time web data.",
-    businessValue: "Enhances research and customer-facing knowledge base search.",
-    govUseCase: "Improves access to verified information for citizens and public servants.",
-    link: "https://www.perplexity.ai"
-  },
-  {
-    name: "Hugging Face",
-    category: "LLM",
-    logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-    description: "Open platform for sharing and deploying machine learning models.",
-    businessValue: "Empowers AI experimentation and open-source model deployment.",
-    govUseCase: "Facilitates transparent, adaptable AI tools for public services.",
-    link: "https://huggingface.co"
+    name: "Synthesia",
+    category: "VID",
+    logo: "https://uploads-ssl.webflow.com/6372f3a6f2b83f3efbcbfc14/63f5b2b3fbe09b59c674116b_synthesia.png",
+    description: "AI video generation platform with digital avatars.",
+    businessValue: "Enables fast creation of personalized marketing and training videos.",
+    govUseCase: "Generates videos for citizen education and multilingual outreach.",
+    link: "https://www.synthesia.io"
   },
   {
     name: "Descript",
@@ -205,33 +238,6 @@ const tools = [
     link: "https://www.heygen.com"
   },
   {
-    name: "Beautiful.ai",
-    category: "UX",
-    logo: "https://www.beautiful.ai/assets/icons/icon-beautifulai.svg",
-    description: "Presentation software with smart slide templates powered by AI.",
-    businessValue: "Saves time in designing professional presentations.",
-    govUseCase: "Creates impactful visuals for public communication or internal use.",
-    link: "https://www.beautiful.ai"
-  },
-  {
-    name: "Copy.ai",
-    category: "BIZ",
-    logo: "https://www.copy.ai/favicon.ico",
-    description: "AI content generator tailored for marketing, blogs, and emails.",
-    businessValue: "Accelerates marketing efforts and content ideation.",
-    govUseCase: "Aids in drafting announcements and informative content.",
-    link: "https://www.copy.ai"
-  },
-  {
-    name: "Writesonic",
-    category: "BIZ",
-    logo: "https://writesonic.com/_next/static/media/favicon.0f7908f4.ico",
-    description: "AI writing tool for marketing, ads, and SEO-friendly content.",
-    businessValue: "Generates product descriptions, blogs, and ad copy efficiently.",
-    govUseCase: "Supports digital services with consistent content generation.",
-    link: "https://writesonic.com"
-  },
-  {
     name: "Pictory",
     category: "VID",
     logo: "https://pictory.ai/wp-content/uploads/2021/03/cropped-Pictory-logo.png",
@@ -239,15 +245,6 @@ const tools = [
     businessValue: "Repurposes written content into engaging video formats.",
     govUseCase: "Creates video highlights of public announcements or policy changes.",
     link: "https://pictory.ai"
-  },
-  {
-    name: "Cohere",
-    category: "LLM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cohere_logo.svg",
-    description: "Enterprise-level AI language models for retrieval-augmented generation.",
-    businessValue: "Custom LLM deployment for specific business needs.",
-    govUseCase: "Deploys secure, task-specific language models for sensitive public applications.",
-    link: "https://cohere.com"
   }
 ];
 
