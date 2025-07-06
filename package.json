@@ -1,7 +1,7 @@
 {
-// dummy update to trigger vercel
   "name": "ai-periodic-table",
   "version": "1.0.0",
+  "dummy": "trigger redeploy",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
