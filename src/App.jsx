@@ -80,11 +80,7 @@ export default function App() {
           <button
             key={cat.key}
             onClick={() => setSelectedCategory(cat.key)}
-            className={`px-4 py-2 rounded font-semibold border-2 ${
-              selectedCategory === cat.key
-                ? `${categoryColors[cat.key]} text-gray-900`
-                : "border-gray-300 text-gray-600 hover:border-gray-500 hover:text-gray-900"
-            }`}
+            className={`px-4 py-2 rounded font-semibold border-2 ${categoryColors[cat.key]} text-gray-900`}
           >
             {cat.label}
           </button>
