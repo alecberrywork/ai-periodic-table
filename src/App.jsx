@@ -34,6 +34,7 @@ const tools = [
   { name: "Lumen5", category: "VID", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfe1BzLmUnDfhaNzQ484EZzoLpRTL6jSIWFQ&s", description: "AI-powered video creation platform that transforms text content into video.", businessValue: "Enables non-experts to create engaging videos quickly from existing content.", govUseCase: "Helps DWP teams create informative videos from reports and announcements to improve citizen engagement.", caseStudy: "Several government agencies used Lumen5 to quickly generate video updates on public health and services.", reference: "https://lumen5.com/case-studies/government", link: "https://lumen5.com" },
 ];
 
+
 // Category color map
 const categoryColors = {
   All: "border-gray-400 bg-gray-100",
@@ -46,7 +47,17 @@ const categoryColors = {
   VID: "border-red-500 bg-red-100",
 };
 
-const categories = ["All", "AGT", "BIZ", "COD", "IMG", "LLM", "UX", "VID"];
+// Categories with full labels
+const categories = [
+  { key: "All", label: "All Tools" },
+  { key: "AGT", label: "Automation Tools" },
+  { key: "BIZ", label: "Business Tools" },
+  { key: "COD", label: "Code Assistants" },
+  { key: "IMG", label: "Image Generators" },
+  { key: "LLM", label: "Language Models" },
+  { key: "UX", label: "Design & UX Tools" },
+  { key: "VID", label: "Video Tools" },
+];
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -67,15 +78,15 @@ export default function App() {
       <div className="flex flex-wrap justify-center gap-3 mb-6">
         {categories.map(cat => (
           <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
+            key={cat.key}
+            onClick={() => setSelectedCategory(cat.key)}
             className={`px-4 py-2 rounded font-semibold border-2 ${
-              selectedCategory === cat
-                ? `${categoryColors[cat]} text-gray-900`
+              selectedCategory === cat.key
+                ? `${categoryColors[cat.key]} text-gray-900`
                 : "border-gray-300 text-gray-600 hover:border-gray-500 hover:text-gray-900"
             }`}
           >
-            {cat}
+            {cat.label}
           </button>
         ))}
       </div>
