@@ -168,6 +168,91 @@ const tools = [
     govUseCase: "Creates informational videos for citizen awareness campaigns.",
     link: "https://lumen5.com"
   }
+
+  // New tools
+  {
+    name: "Perplexity AI",
+    category: "LLM",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Perplexity_AI_Logo.png",
+    description: "AI-powered search engine that answers questions using real-time web data.",
+    businessValue: "Enhances research and customer-facing knowledge base search.",
+    govUseCase: "Improves access to verified information for citizens and public servants.",
+    link: "https://www.perplexity.ai"
+  },
+  {
+    name: "Hugging Face",
+    category: "LLM",
+    logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    description: "Open platform for sharing and deploying machine learning models.",
+    businessValue: "Empowers AI experimentation and open-source model deployment.",
+    govUseCase: "Facilitates transparent, adaptable AI tools for public services.",
+    link: "https://huggingface.co"
+  },
+  {
+    name: "Descript",
+    category: "VID",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/10/Descript_logo.svg",
+    description: "Video and podcast editing tool with AI-based transcription and editing.",
+    businessValue: "Streamlines content production for multimedia teams.",
+    govUseCase: "Enables production of accessible and inclusive government media.",
+    link: "https://www.descript.com"
+  },
+  {
+    name: "HeyGen",
+    category: "VID",
+    logo: "https://heygen.com/static/media/logo.812126b577f23e3324a1.png",
+    description: "AI video tool that creates avatars to deliver spoken presentations.",
+    businessValue: "Great for training, onboarding, and personalized video messaging.",
+    govUseCase: "Creates accessible video guidance for public users in multiple languages.",
+    link: "https://www.heygen.com"
+  },
+  {
+    name: "Beautiful.ai",
+    category: "UX",
+    logo: "https://www.beautiful.ai/assets/icons/icon-beautifulai.svg",
+    description: "Presentation software with smart slide templates powered by AI.",
+    businessValue: "Saves time in designing professional presentations.",
+    govUseCase: "Creates impactful visuals for public communication or internal use.",
+    link: "https://www.beautiful.ai"
+  },
+  {
+    name: "Copy.ai",
+    category: "BIZ",
+    logo: "https://www.copy.ai/favicon.ico",
+    description: "AI content generator tailored for marketing, blogs, and emails.",
+    businessValue: "Accelerates marketing efforts and content ideation.",
+    govUseCase: "Aids in drafting announcements and informative content.",
+    link: "https://www.copy.ai"
+  },
+  {
+    name: "Writesonic",
+    category: "BIZ",
+    logo: "https://writesonic.com/_next/static/media/favicon.0f7908f4.ico",
+    description: "AI writing tool for marketing, ads, and SEO-friendly content.",
+    businessValue: "Generates product descriptions, blogs, and ad copy efficiently.",
+    govUseCase: "Supports digital services with consistent content generation.",
+    link: "https://writesonic.com"
+  },
+  {
+    name: "Pictory",
+    category: "VID",
+    logo: "https://pictory.ai/wp-content/uploads/2021/03/cropped-Pictory-logo.png",
+    description: "AI tool that turns long content into short branded videos.",
+    businessValue: "Repurposes written content into engaging video formats.",
+    govUseCase: "Creates video highlights of public announcements or policy changes.",
+    link: "https://pictory.ai"
+  },
+  {
+    name: "Cohere",
+    category: "LLM",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cohere_logo.svg",
+    description: "Enterprise-level AI language models for retrieval-augmented generation.",
+    businessValue: "Custom LLM deployment for specific business needs.",
+    govUseCase: "Deploys secure, task-specific language models for sensitive public applications.",
+    link: "https://cohere.com"
+  }
+
+
 ];
 
 const categories = {
