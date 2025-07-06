@@ -19,3 +19,9 @@ you have to be very specific and best to add in one change at a time
 not very procedural - after each change I didnt really think about what had gone before
 
 fine for a greenfield project like this - how would it work in a complex existing project I'm not sure
+
+it recreates the file each time, meaning that it doesnt always persist changes. This also means that random changes can come in. This is possibly because of how I am using the tool.
+
+I learned to then ask for snippet changes rather than wholesale ones
+
+fix one thing, break another

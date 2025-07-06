@@ -449,7 +449,7 @@ export default function App() {
           ))}
         </motion.div>
 
-        {/* Modal for selected tool */}
+      {/* Modal Popup */}
         <AnimatePresence>
           {selectedTool && (
             <>
@@ -474,24 +474,20 @@ export default function App() {
                   style={{ originX: 0.5, originY: 0.5 }}
                 >
                   {/* existing modal content */}
-                  <button
-                    onClick={() => setSelectedTool(null)}
-                    aria-label="Close modal"
-                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+                  <p className="mb-3"><strong>Category:</strong> {selectedTool.category}</p>
+                  <p className="mb-3"><strong>Description:</strong> {selectedTool.description}</p>
+                  <p className="mb-3"><strong>Business Value:</strong> {selectedTool.businessValue}</p>
+                  <p className="mb-3"><strong>Government Use Case:</strong> {selectedTool.govUseCase}</p>
+                  <p className="mb-3"><strong>Case Study:</strong> {selectedTool.caseStudy}</p>
+                  <p className="mb-3 break-words"><strong>Reference:</strong> <a href={selectedTool.reference} target="_blank" rel="noopener noreferrer" className="underline text-blue-600 hover:text-blue-800">{selectedTool.reference}</a></p>
+                  <a
+                    href={selectedTool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                   >
-                    &times;
-                  </button>
-                  <div className="flex items-center gap-4 mb-4">
-                    <img
-                      src={selectedTool.logo}
-                      alt={`${selectedTool.name} logo`}
-                      className="h-16 w-16 object-contain"
-                    />
-                    <h2 className="text-2xl font-bold text-gray-900">
-                      {selectedTool.name}
-                    </h2>
-                  </div>
-                  {/* ... rest of modal fields ... */}
+                    Visit {selectedTool.name}
+                  </a>
                 </motion.div>
               </motion.div>
             </>
