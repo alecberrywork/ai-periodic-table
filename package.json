@@ -1,4 +1,5 @@
 {
+// dummy update to trigger vercel
   "name": "ai-periodic-table",
   "version": "1.0.0",
   "scripts": {
