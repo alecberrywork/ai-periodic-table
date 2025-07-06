@@ -1,12 +1,90 @@
-// Interactive Periodic Table of Generative AI Tools with Business and Government Value
-// Built with React + Tailwind CSS
-
+// src/PeriodicTable.jsx
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Briefcase, Landmark } from "lucide-react";
 
 const tools = [
-  // ... (tool definitions remain the same as provided)
+  {
+    name: "ChatGPT",
+    category: "LLM",
+    description: "An advanced large language model for text generation and understanding.",
+    businessValue: "Automates customer support, content creation, and enhances productivity.",
+    govUseCase: "Can be used for citizen engagement chatbots and document summarization.",
+    logo: "https://cdn.worldvectorlogo.com/logos/openai.svg",
+    link: "https://chat.openai.com"
+  },
+  {
+    name: "Midjourney",
+    category: "IMG",
+    description: "AI tool that generates images from textual prompts.",
+    businessValue: "Accelerates creative workflows and marketing content generation.",
+    govUseCase: "Useful for public campaign visuals and data visualization.",
+    logo: "https://pbs.twimg.com/profile_images/1599758745945406721/huGi0NvW_400x400.jpg",
+    link: "https://www.midjourney.com"
+  },
+  {
+    name: "DALL·E 2",
+    category: "IMG",
+    description: "AI model creating realistic images and art from descriptions.",
+    businessValue: "Speeds up design prototyping and advertising content.",
+    govUseCase: "Generates imagery for public information campaigns and training materials.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/DALL-E_logo.svg/1024px-DALL-E_logo.svg.png",
+    link: "https://openai.com/dall-e-2/"
+  },
+  {
+    name: "RunwayML",
+    category: "VID",
+    description: "Video editing and generation powered by AI.",
+    businessValue: "Cuts down video production times and costs.",
+    govUseCase: "Creates educational videos and public safety announcements.",
+    logo: "https://assets-global.website-files.com/61e7bfde5c839487cdee0995/6267c5aabf66ae434e49af97_runway-icon.svg",
+    link: "https://runwayml.com"
+  },
+  {
+    name: "GitHub Copilot",
+    category: "COD",
+    description: "AI pair programmer that suggests code snippets.",
+    businessValue: "Increases developer productivity and code quality.",
+    govUseCase: "Helps build efficient public sector software faster.",
+    logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    link: "https://copilot.github.com"
+  },
+  {
+    name: "Jasper",
+    category: "BIZ",
+    description: "AI copywriting assistant for marketing and content creation.",
+    businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
+    govUseCase: "Supports communication teams in drafting public messages.",
+    logo: "https://cdn.brandfolder.io/5R1C6YQX/at/lcwnccrtqvrr87fmnwbjznz4/logo.png",
+    link: "https://www.jasper.ai"
+  },
+  {
+    name: "Zapier",
+    category: "AGT",
+    description: "Automation platform connecting apps to automate workflows.",
+    businessValue: "Saves time by automating repetitive tasks across tools.",
+    govUseCase: "Integrates government service platforms for smoother citizen experience.",
+    logo: "https://zapier.com/zapier-logo.svg",
+    link: "https://zapier.com"
+  },
+  {
+    name: "Figma",
+    category: "UX",
+    description: "Collaborative design tool with AI-powered plugins.",
+    businessValue: "Speeds up UI/UX design and prototyping.",
+    govUseCase: "Designs user-friendly government portals and apps.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+    link: "https://figma.com"
+  },
+  {
+    name: "AIVA",
+    category: "AUD",
+    description: "AI composer that creates music and soundtracks.",
+    businessValue: "Generates custom music for marketing and branding.",
+    govUseCase: "Creates audio content for public service announcements and accessibility.",
+    logo: "https://aiva.ai/static/aiva_logo.svg",
+    link: "https://aiva.ai"
+  }
 ];
 
 const categories = {
