@@ -27,7 +27,7 @@ const tools = [
   {
     name: "Claude",
     category: "LLM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Anthropic_logo.svg/512px-Anthropic_logo.svg.png",
+    logo: "https://logosandtypes.com/wp-content/uploads/2022/06/anthropic.svg",
     description: "Anthropic's large language model focusing on safe and ethical AI use.",
     businessValue: "Supports secure customer support and content generation workflows.",
     govUseCase: "Assists in safely deploying AI in government services with ethical constraints.",
@@ -36,7 +36,7 @@ const tools = [
   {
     name: "Midjourney",
     category: "IMG",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Midjourney_Logo.png",
+    logo: "https://i.ibb.co/SKmWLqW/midjourney-icon.png",
     description: "AI tool that generates images from textual prompts.",
     businessValue: "Accelerates creative workflows and marketing content generation.",
     govUseCase: "Useful for public campaign visuals and data visualization.",
@@ -63,7 +63,7 @@ const tools = [
   {
     name: "RunwayML",
     category: "VID",
-    logo: "https://uploads-ssl.webflow.com/64e5f6dc3346f14b092d137a/64e5f9e6da984c0e5f6f3d15_Runway%20Logo.svg",
+    logo: "https://i.ibb.co/W6Fq4vz/runwayml-logo.png",
     description: "Video editing and generation powered by AI.",
     businessValue: "Cuts down video production times and costs.",
     govUseCase: "Creates educational videos and public safety announcements.",
@@ -72,7 +72,7 @@ const tools = [
   {
     name: "Synthesia",
     category: "VID",
-    logo: "https://assets-global.website-files.com/6220e29e6caca9a7de880b6f/6470e96271d55d9a4cf78a5c_Synthesia%20Logo%20White.svg",
+    logo: "https://i.ibb.co/7pPjbt0/synthesia-logo.png",
     description: "AI video generation platform with digital avatars.",
     businessValue: "Enables fast creation of personalized marketing and training videos.",
     govUseCase: "Generates videos for citizen education and multilingual outreach.",
@@ -90,7 +90,7 @@ const tools = [
   {
     name: "Tabnine",
     category: "COD",
-    logo: "https://tabnine.com/images/logo.png",
+    logo: "https://i.ibb.co/Bsbb08V/tabnine-logo.png",
     description: "AI code completion tool supporting multiple languages.",
     businessValue: "Speeds up coding and reduces errors.",
     govUseCase: "Improves developer efficiency in government IT projects.",
@@ -99,7 +99,7 @@ const tools = [
   {
     name: "Jasper",
     category: "BIZ",
-    logo: "https://assets-global.website-files.com/6217d5d72036aa614c7be26b/6284c170cd075e1c737d16b2_Jasper%20logo.svg",
+    logo: "https://i.ibb.co/YbVzNjb/jasper-logo.png",
     description: "AI copywriting assistant for marketing and content creation.",
     businessValue: "Generates marketing copy, blogs, and social media posts efficiently.",
     govUseCase: "Supports communication teams in drafting public messages.",
@@ -126,7 +126,7 @@ const tools = [
   {
     name: "Make (Integromat)",
     category: "AGT",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Make_logo_icon.svg",
+    logo: "https://i.ibb.co/6wJkgFR/make-logo.png",
     description: "Visual automation platform to connect apps and services.",
     businessValue: "Enables complex workflow automation with minimal coding.",
     govUseCase: "Streamlines multi-department government processes.",
@@ -144,7 +144,7 @@ const tools = [
   {
     name: "Canva",
     category: "UX",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg",
+    logo: "https://i.ibb.co/Q9jT5Ht/canva-logo.png",
     description: "Graphic design platform with AI-assisted templates.",
     businessValue: "Simplifies creation of marketing materials without design skills.",
     govUseCase: "Creates engaging public communications and educational content.",
@@ -162,7 +162,7 @@ const tools = [
   {
     name: "Lumen5",
     category: "VID",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Lumen5_logo.svg",
+    logo: "https://i.ibb.co/Tmxj3N4/lumen5-logo.png",
     description: "Video creation platform powered by AI to turn text into video.",
     businessValue: "Enables quick video marketing content production.",
     govUseCase: "Creates informational videos for citizen awareness campaigns.",

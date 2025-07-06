@@ -1,0 +1,13 @@
+I am not a recent engineer but I was one in the past so I had some useful tools at my disposal to solve these problems. These skills came in more when it came to solivng issues.
+
+However, I was definitely quicker at working with a set of technologies I've not worked with before. 
+
+Therefore I think this tooling allows less experienced developers the chance to become more powerful, but they still need a foundation to solve problems.
+
+I haven't used tools like GitHub, node or others before
+
+ChatGPT did make some mistakes too
+
+ChatGPT was also selective sometimes over what it gave me - such as sometimes it would give me everything I wanted, other times it would decide to just give me an example
+
+I was learning somewhat but not necesarrily as much as I would if I had to do everything myself - which meant I was ultimately more dependent on the tool
