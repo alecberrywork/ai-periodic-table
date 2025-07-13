@@ -31,3 +31,6 @@ How does the LLM maintain context when it can shift a lot between asks?
 each fix intorduced a break
 
 hypothesis was to do as little coding myself as possible
+
+you are at the mercy of what the agent wants to do - how do we motivate AI?
+
